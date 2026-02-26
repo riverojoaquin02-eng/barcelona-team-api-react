@@ -1,0 +1,1770 @@
+{
+  "clubInfo": {
+    "nombre_completo": "Fútbol Club Barcelona",
+    "nombre_corto": "FC Barcelona",
+    "apodo": "Barça, Blaugrana, Culés",
+    "fundacion": "29 de noviembre de 1899",
+    "presidente": "Joan Laporta",
+    "vicepresidente": "Rafa Yuste",
+    "estadio": {
+      "nombre": "Spotify Camp Nou",
+      "capacidad": "99.354 espectadores",
+      "inauguracion": "24 de septiembre de 1957",
+      "dimensiones": "105m x 68m",
+      "propietario": "Fútbol Club Barcelona",
+      "direccion": "C. d'Arístides Maillol, 12, 08028 Barcelona",
+      "historia": "El Camp Nou es el estadio más grande de Europa y uno de los más emblemáticos del mundo. Ha sido testigo de innumerables momentos históricos del club, desde las 5 Copas de Europa hasta las épicas remontadas.",
+      "reformas": [
+        "1982: Ampliación para el Mundial de España",
+        "1994: Instalación de nueva iluminación",
+        "2008: Renovación de asientos",
+        "2023-2026: Reforma integral 'Espai Barça'"
+      ],
+      "records": {
+        "asistencia_record": "120.000 espectadores",
+        "fecha_record": "5 de marzo de 1986",
+        "partidos_jugados": 3000
+      }
+    },
+    "entrenador": {
+      "nombre": "Hansi Flick",
+      "nacionalidad": "Alemana",
+      "edad": 59,
+      "formacion_preferida": "4-2-3-1 / 4-3-3",
+      "desde": "29 de mayo de 2024",
+      "biografia": "Hansi Flick es uno de los entrenadores más exitosos de la última década. Tras una brillante carrera como asistente y entrenador, llevó al Bayern Munich a ganar el sextete histórico en 2020.",
+      "carrera": [
+        "2000-2005: Asistente en Austria Salzburgo",
+        "2006-2014: Asistente de la selección alemana",
+        "2019-2021: Entrenador del Bayern Munich",
+        "2021-2023: Seleccionador de Alemania",
+        "2024-presente: FC Barcelona"
+      ],
+      "titulos_ganados": 18
+    },
+    "historia": {
+      "fundacion": "29 de noviembre de 1899",
+      "fundadores": [
+        "Joan Gamper",
+        "Gualteri Wild",
+        "Lluís d'Ossó",
+        "Bartomeu Terradas",
+        "Otto Kunzle"
+      ],
+      "lema": "Més que un club",
+      "colores": [
+        "Azul",
+        "Granate"
+      ],
+      "himno": "Cant del Barça",
+      "presidentes_notables": [
+        "Joan Gamper (fundador)",
+        "Josep Lluís Núñez (1978-2000)",
+        "Joan Laporta"
+      ],
+      "momentos_historicos": [
+        {
+          "anio": 1902,
+          "titulo": "Primera final",
+          "descripcion": "Llega por primera vez a la final"
+        },
+        {
+          "anio": 1992,
+          "titulo": "Primera Copa",
+          "descripcion": "Wembley, Koeman"
+        },
+        {
+          "anio": 2009,
+          "titulo": "Sextete",
+          "descripcion": "Guardiola conquista los 6 títulos"
+        }
+      ],
+      "leyendas": [
+        "Lionel Messi",
+        "Johan Cruyff",
+        "Andrés Iniesta",
+        "Xavi Hernández",
+        "Ronaldinho",
+        "Carles Puyol"
+      ],
+      "records_club": {
+        "maxima_goleada": "Barcelona 10-1",
+        "mas_partidos": "Lionel Messi - 778 partidos",
+        "maximo_goleador": "Lionel Messi - 672 goles",
+        "mas_titulos": "Lionel Messi - 35 títulos"
+      }
+    },
+    "estadisticas_actuales": {
+      "temporada": "2024-2025",
+      "liga": {
+        "posicion": 1,
+        "puntos": 38,
+        "partidos_jugados": 16,
+        "ganados": 12,
+        "empatados": 2,
+        "perdidos": 2,
+        "goles_favor": 50,
+        "goles_contra": 18,
+        "diferencia_goles": 32
+      },
+      "champions": {
+        "fase": "Fase de Liga",
+        "partidos_jugados": 6,
+        "ganados": 4,
+        "empatados": 1,
+        "perdidos": 1,
+        "goles_favor": 18,
+        "goles_contra": 8
+      },
+      "copa_rey": {
+        "fase": "Octavos de final",
+        "resultado": "En disputa"
+      }
+    },
+    "trofeos": [
+      {
+        "id": 1,
+        "nombre": "Liga Española",
+        "cantidad": 27,
+        "imagen": "🏆",
+        "descripcion": "Campeonato de Liga",
+        "ultimo_ganado": "2022-2023",
+        "anios_ganados": [
+          "1929",
+          "2023"
+        ]
+      },
+      {
+        "id": 2,
+        "nombre": "Champions League",
+        "cantidad": 5,
+        "imagen": "🏆",
+        "descripcion": "Liga de Campeones",
+        "ultimo_ganado": "2014-2015",
+        "anios_ganados": [
+          "1992",
+          "2006",
+          "2009",
+          "2011",
+          "2015"
+        ]
+      }
+    ],
+    "jugadores": [
+      {
+        "nombre": "Marc-André",
+        "apellido": "ter Stegen",
+        "dorsal": 1,
+        "posicion": "Portero",
+        "nacionalidad": "Alemana",
+        "fecha_nacimiento": "30/04/1992",
+        "lugar_nacimiento": "Mönchengladbach, Alemania",
+        "altura": "187 cm",
+        "peso": "85 kg",
+        "biografia": "Capitán del primer equipo y uno de los mejores porteros del mundo. Con una técnica de pies excepcional, es fundamental en la salida de balón del Barça. Ha defendido la portería blaugrana desde 2014, convirtiéndose en una leyenda del club.\n\nTras la salida de otros pesos pesados, Ter Stegen ha asumido el liderazgo total del vestuario. Su seguridad bajo palos y su capacidad para ganar duelos individuales lo hacen insustituible. Actualmente se recupera de una lesión grave de rodilla sufrida al inicio de la temporada.",
+        "estadisticas": {
+          "partidos": 7,
+          "goles": 0,
+          "asistencias": 0,
+          "tarjetas_amarillas": 0,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 Champions League",
+          "5 La Liga",
+          "5 Copa del Rey",
+          "1 Mundial de Clubes"
+        ],
+        "debut": "17/09/2014",
+        "valor_mercado": "€20M",
+        "foto": "ter_stegen",
+        "id": 1,
+        "edad": 33
+      },
+      {
+        "nombre": "Iñaki",
+        "apellido": "Peña",
+        "dorsal": 13,
+        "posicion": "Portero",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "02/03/1999",
+        "lugar_nacimiento": "Alicante, España",
+        "altura": "184 cm",
+        "peso": "78 kg",
+        "biografia": "Formado en La Masia, Iñaki Peña es un portero ágil y con grandes reflejos. Tras una exitosa cesión en el Galatasaray donde demostró su nivel europeo, regresó al Barça para ser el relevo de garantías de Ter Stegen.\n\nHa demostrado personalidad en momentos críticos, como durante la baja prolongada del alemán la temporada pasada. Es conocido por su seguridad en el juego aéreo a pesar de no ser el portero más alto, y su excelente distribución con los pies.",
+        "estadisticas": {
+          "partidos": 15,
+          "goles": 0,
+          "asistencias": 0,
+          "tarjetas_amarillas": 1,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 La Liga",
+          "1 Supercopa de España"
+        ],
+        "debut": "01/11/2022",
+        "valor_mercado": "€8M",
+        "foto": "inaki_pena",
+        "id": 2,
+        "edad": 26
+      },
+      {
+        "nombre": "Wojciech",
+        "apellido": "Szczęsny",
+        "dorsal": 25,
+        "posicion": "Portero",
+        "nacionalidad": "Polaca",
+        "fecha_nacimiento": "18/04/1990",
+        "lugar_nacimiento": "Varsovia, Polonia",
+        "altura": "195 cm",
+        "peso": "90 kg",
+        "biografia": "Incorporado de emergencia tras la lesión de Ter Stegen, el portero polaco salió de su retiro para ayudar al club. Con una dilatada experiencia en equipos como Arsenal, Juventus y la selección de Polonia, aporta veteranía y seguridad inmediata.\n\nEs un guardameta imponente físicamente, excelente en los bloqueos y muy difícil de batir en el uno contra uno. Su adaptación al grupo ha sido rápida gracias a su amistad con su compatriota Robert Lewandowski.",
+        "estadisticas": {
+          "partidos": 0,
+          "goles": 0,
+          "asistencias": 0,
+          "tarjetas_amarillas": 0,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "3 Serie A",
+          "3 Coppa Italia",
+          "2 FA Cup"
+        ],
+        "debut": "N/A",
+        "valor_mercado": "€1M",
+        "foto": "szczesny",
+        "id": 3,
+        "edad": 35
+      },
+      {
+        "nombre": "Pau",
+        "apellido": "Cubarsí",
+        "dorsal": 2,
+        "posicion": "Defensa",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "22/01/2007",
+        "lugar_nacimiento": "Estanyol, España",
+        "altura": "184 cm",
+        "peso": "71 kg",
+        "biografia": "La gran revelación de la cantera en la defensa. A pesar de su extrema juventud, exhibe una madurez impropia, destacando por una limpieza quirúrgica en la salida de balón y una colocación defensiva perfecta.\n\nSe ha consolidado como titular indiscutible gracias a su capacidad para romper líneas con pases largos y su frialdad ante la presión. Es considerado el futuro central de la selección española y del FC Barcelona para la próxima década.",
+        "estadisticas": {
+          "partidos": 22,
+          "goles": 0,
+          "asistencias": 1,
+          "tarjetas_amarillas": 3,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "Medalla de Oro JJOO 2024"
+        ],
+        "debut": "18/01/2024",
+        "valor_mercado": "€40M",
+        "foto": "cubarsi",
+        "id": 4,
+        "edad": 19
+      },
+      {
+        "nombre": "Alejandro",
+        "apellido": "Balde",
+        "dorsal": 3,
+        "posicion": "Defensa",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "18/10/2003",
+        "lugar_nacimiento": "Barcelona, España",
+        "altura": "175 cm",
+        "peso": "69 kg",
+        "biografia": "Lateral izquierdo de una potencia y velocidad asombrosas. Se ha adueñado del carril izquierdo gracias a su capacidad para desbordar y llegar a línea de fondo, siendo un puñal en ataque y recuperando posición rápidamente.\n\nFormado en La Masia, representa el lateral moderno que el Barça necesita. Tras superar una lesión importante, ha vuelto a su mejor nivel bajo las órdenes de Hansi Flick, siendo clave en la amplitud del campo por la izquierda.",
+        "estadisticas": {
+          "partidos": 20,
+          "goles": 0,
+          "asistencias": 3,
+          "tarjetas_amarillas": 2,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 La Liga",
+          "1 Supercopa de España"
+        ],
+        "debut": "14/09/2021",
+        "valor_mercado": "€40M",
+        "foto": "balde",
+        "id": 5,
+        "edad": 22
+      },
+      {
+        "nombre": "Ronald",
+        "apellido": "Araujo",
+        "dorsal": 4,
+        "posicion": "Defensa",
+        "nacionalidad": "Uruguaya",
+        "fecha_nacimiento": "07/03/1999",
+        "lugar_nacimiento": "Rivera, Uruguay",
+        "altura": "192 cm",
+        "peso": "91 kg",
+        "biografia": "El pulmón y el coraje de la defensa blaugrana. Araujo es un central con un portento físico envidiable, dominante en el juego aéreo y casi imbatible en velocidad. Su garra uruguaya lo ha convertido en uno de los capitanes.\n\nEs capaz de jugar tanto de central como de lateral derecho en partidos específicos para frenar a extremos rápidos. Su liderazgo comunicativo en el campo es vital para organizar la línea defensiva en el esquema de presión alta del equipo.",
+        "estadisticas": {
+          "partidos": 0,
+          "goles": 0,
+          "asistencias": 0,
+          "tarjetas_amarillas": 0,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 La Liga",
+          "1 Copa del Rey",
+          "1 Supercopa de España"
+        ],
+        "debut": "06/10/2019",
+        "valor_mercado": "€70M",
+        "foto": "araujo",
+        "id": 6,
+        "edad": 26
+      },
+      {
+        "nombre": "Iñigo",
+        "apellido": "Martínez",
+        "dorsal": 5,
+        "posicion": "Defensa",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "17/05/1991",
+        "lugar_nacimiento": "Ondarroa, España",
+        "altura": "182 cm",
+        "peso": "76 kg",
+        "biografia": "Central veterano con una pierna izquierda privilegiada para la salida de balón. Aporta la experiencia necesaria en una defensa muy joven, destacando por su contundencia en el corte y su inteligencia táctica.\n\nSe ha convertido en un fijo para Hansi Flick, liderando la línea del fuera de juego y aportando seguridad en los balones parados. Su carácter competitivo ayuda a mantener la intensidad del grupo durante los noventa minutos.",
+        "estadisticas": {
+          "partidos": 21,
+          "goles": 1,
+          "asistencias": 1,
+          "tarjetas_amarillas": 5,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 Supercopa de España (con Athletic)"
+        ],
+        "debut": "03/09/2023",
+        "valor_mercado": "€5M",
+        "foto": "inigo_martinez",
+        "id": 7,
+        "edad": 34
+      },
+      {
+        "nombre": "Jules",
+        "apellido": "Koundé",
+        "dorsal": 23,
+        "posicion": "Defensa",
+        "nacionalidad": "Francesa",
+        "fecha_nacimiento": "12/11/1998",
+        "lugar_nacimiento": "París, Francia",
+        "altura": "180 cm",
+        "peso": "75 kg",
+        "biografia": "Defensa polivalente que rinde al máximo nivel tanto de central como de lateral derecho. Posee una gran capacidad de salto y una salida de balón muy limpia, siendo fundamental en la construcción del juego desde atrás.\n\nSu profesionalidad es ejemplar, destacando por sus entrenamientos individuales y su resistencia física. Esta temporada se ha consolidado como uno de los mejores laterales derechos de Europa, combinando solidez defensiva con subidas peligrosas al ataque.",
+        "estadisticas": {
+          "partidos": 23,
+          "goles": 1,
+          "asistencias": 4,
+          "tarjetas_amarillas": 1,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 La Liga",
+          "1 Supercopa de España",
+          "1 UEFA Nations League"
+        ],
+        "debut": "28/08/2022",
+        "valor_mercado": "€50M",
+        "foto": "kounde",
+        "id": 8,
+        "edad": 27
+      },
+      {
+        "nombre": "Gavi",
+        "apellido": "Páez",
+        "dorsal": 6,
+        "posicion": "Centrocampista",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "05/08/2004",
+        "lugar_nacimiento": "Los Palacios y Villafranca, España",
+        "altura": "173 cm",
+        "peso": "70 kg",
+        "biografia": "El alma del equipo. Gavi representa la lucha, la intensidad y la calidad técnica de La Masia. Ganador del Golden Boy y el Trofeo Kopa, es capaz de ocupar cualquier posición en el centro del campo.\n\nTras superar una rotura de ligamentos, su regreso ha sido esperado con ansia por la afición. Su capacidad para presionar y recuperar balones, unida a su técnica para jugar en espacios reducidos, lo hacen un jugador único en la plantilla.",
+        "estadisticas": {
+          "partidos": 8,
+          "goles": 0,
+          "asistencias": 0,
+          "tarjetas_amarillas": 2,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 La Liga",
+          "1 Supercopa de España",
+          "1 UEFA Nations League"
+        ],
+        "debut": "29/08/2021",
+        "valor_mercado": "€90M",
+        "foto": "gavi",
+        "id": 9,
+        "edad": 21
+      },
+      {
+        "nombre": "Pedri",
+        "apellido": "González",
+        "dorsal": 8,
+        "posicion": "Centrocampista",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "25/11/2002",
+        "lugar_nacimiento": "Tegueste, España",
+        "altura": "174 cm",
+        "peso": "68 kg",
+        "biografia": "El cerebro del juego blaugrana. Pedri tiene una visión de juego privilegiada y un control del tiempo que recuerda a las grandes leyendas del club. Es el encargado de poner la pausa y el último pase.\n\nSu capacidad para girar sobre sí mismo y zafarse de la presión rival es su marca registrada. Bajo el nuevo sistema, juega con más libertad para llegar al área contraria, lo que ha aumentado su cifra de goles y asistencias.",
+        "estadisticas": {
+          "partidos": 22,
+          "goles": 4,
+          "asistencias": 5,
+          "tarjetas_amarillas": 1,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 La Liga",
+          "1 Copa del Rey",
+          "1 Supercopa de España",
+          "1 Eurocopa"
+        ],
+        "debut": "27/09/2020",
+        "valor_mercado": "€80M",
+        "foto": "pedri",
+        "id": 10,
+        "edad": 23
+      },
+      {
+        "nombre": "Dani",
+        "apellido": "Olmo",
+        "dorsal": 20,
+        "posicion": "Centrocampista",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "07/05/1998",
+        "lugar_nacimiento": "Terrassa, España",
+        "altura": "182 cm",
+        "peso": "73 kg",
+        "biografia": "Canterano que regresó al club tras triunfar en el extranjero. Destaca por su polivalencia, pudiendo actuar de mediapunta o extremo. Tiene una visión de juego extraordinaria y gran capacidad goleadora desde segunda línea.\n\nFue clave en la consecución de la Eurocopa 2024 con España. Su regreso al Barça ha inyectado creatividad y gol al mediocampo, entendiéndose a la perfección con los delanteros y mejorando la fluidez del ataque.",
+        "estadisticas": {
+          "partidos": 12,
+          "goles": 6,
+          "asistencias": 2,
+          "tarjetas_amarillas": 1,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 Eurocopa",
+          "1 UEFA Nations League",
+          "5 Ligas Croatas",
+          "1 Copa Alemana"
+        ],
+        "debut": "27/08/2024",
+        "valor_mercado": "€60M",
+        "foto": "dani_olmo",
+        "id": 11,
+        "edad": 27
+      },
+      {
+        "nombre": "Marc",
+        "apellido": "Casadó",
+        "dorsal": 17,
+        "posicion": "Centrocampista",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "14/09/2003",
+        "lugar_nacimiento": "Sant Pere de Vilamajor, España",
+        "altura": "172 cm",
+        "peso": "66 kg",
+        "biografia": "El nuevo pivote de La Masia. Tras años capitaneando el filial, ha dado el salto al primer equipo con una jerarquía asombrosa. Destaca por su inteligencia táctica, posicionamiento y capacidad de recuperación.\n\nSe ha ganado la confianza de Flick gracias a su regularidad y su gran nivel en los partidos de alta exigencia. Aporta el equilibrio necesario para que los interiores puedan brillar en ataque, siendo el ancla del equipo.",
+        "estadisticas": {
+          "partidos": 20,
+          "goles": 0,
+          "asistencias": 5,
+          "tarjetas_amarillas": 4,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 La Liga (como suplente)"
+        ],
+        "debut": "01/11/2022",
+        "valor_mercado": "€20M",
+        "foto": "casado",
+        "id": 12,
+        "edad": 22
+      },
+      {
+        "nombre": "Frenkie",
+        "apellido": "de Jong",
+        "dorsal": 21,
+        "posicion": "Centrocampista",
+        "nacionalidad": "Neerlandesa",
+        "fecha_nacimiento": "12/05/1997",
+        "lugar_nacimiento": "Arkel, Países Bajos",
+        "altura": "180 cm",
+        "peso": "74 kg",
+        "biografia": "Elegancia y conducción en estado puro. Frenkie es un centrocampista todoterreno capaz de romper líneas en conducción y organizar el juego desde la base. Es uno de los capitanes del equipo.\n\nSu capacidad para resistir la presión rival es fundamental en partidos trabados. Aunque ha tenido problemas con las lesiones este año, sigue siendo un pilar por su experiencia y calidad técnica, apoyando tanto en tareas defensivas como ofensivas.",
+        "estadisticas": {
+          "partidos": 10,
+          "goles": 0,
+          "asistencias": 0,
+          "tarjetas_amarillas": 1,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 La Liga",
+          "1 Copa del Rey",
+          "1 Supercopa de España",
+          "1 Eredivisie"
+        ],
+        "debut": "16/08/2019",
+        "valor_mercado": "€60M",
+        "foto": "de_jong",
+        "id": 13,
+        "edad": 28
+      },
+      {
+        "nombre": "Robert",
+        "apellido": "Lewandowski",
+        "dorsal": 9,
+        "posicion": "Delantero",
+        "nacionalidad": "Polaca",
+        "fecha_nacimiento": "21/08/1988",
+        "lugar_nacimiento": "Varsovia, Polonia",
+        "altura": "185 cm",
+        "peso": "81 kg",
+        "biografia": "Goleador insaciable y referente absoluto en el área. Ganador de múltiples Botas de Oro, Lewandowski aporta experiencia, profesionalidad y, sobre todo, goles fundamentales para competir por todos los títulos.\n\nBajo el mando de Flick ha recuperado su mejor versión, liderando la tabla de goleadores y siendo vital en la presión alta. Su capacidad para jugar de espaldas y conectar con los extremos le da otra dimensión al ataque blaugrana.",
+        "estadisticas": {
+          "partidos": 23,
+          "goles": 22,
+          "asistencias": 3,
+          "tarjetas_amarillas": 1,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 Champions League",
+          "1 La Liga",
+          "10 Bundesliga",
+          "1 Mundial de Clubes"
+        ],
+        "debut": "13/08/2022",
+        "valor_mercado": "€15M",
+        "foto": "lewandowski",
+        "id": 14,
+        "edad": 37
+      },
+      {
+        "nombre": "Lamine",
+        "apellido": "Yamal",
+        "dorsal": 19,
+        "posicion": "Delantero",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "13/07/2007",
+        "lugar_nacimiento": "Esplugues de Llobregat, España",
+        "altura": "180 cm",
+        "peso": "72 kg",
+        "biografia": "Fenómeno mundial y nueva estrella de La Masia. Con solo 17 años, Lamine Yamal ha roto todos los récords de precocidad, destacando por su regate, visión de juego y capacidad para decidir partidos por sí mismo.\n\nFundamental en la Eurocopa 2024 con España, su descaro en banda derecha y su zurda prodigiosa lo convierten en el jugador más determinante de la plantilla. Es el ídolo actual de la afición en Montjuïc y el futuro Camp Nou.",
+        "estadisticas": {
+          "partidos": 22,
+          "goles": 7,
+          "asistencias": 10,
+          "tarjetas_amarillas": 1,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 Eurocopa",
+          "1 La Liga"
+        ],
+        "debut": "29/04/2023",
+        "valor_mercado": "€150M",
+        "foto": "lamine_yamal",
+        "id": 15,
+        "edad": 18
+      },
+      {
+        "nombre": "Raphael",
+        "apellido": "Dias Belloli",
+        "dorsal": 11,
+        "posicion": "Delantero",
+        "nacionalidad": "Brasileña",
+        "fecha_nacimiento": "14/12/1996",
+        "lugar_nacimiento": "Porto Alegre, Brasil",
+        "altura": "176 cm",
+        "peso": "68 kg",
+        "biografia": "Raphinha es la definición de trabajo y eficacia. Sus números en cuanto a goles y asistencias lo sitúan entre los mejores extremos del mundo, destacando también por su enorme sacrificio defensivo.\n\nNombrero capitán esta temporada, ha mostrado un nivel espectacular jugando tanto por banda como más centrado. Su excelente golpeo a balón parado y su capacidad de desmarque al espacio lo hacen un jugador fundamental para el sistema táctico actual.",
+        "estadisticas": {
+          "partidos": 23,
+          "goles": 14,
+          "asistencias": 12,
+          "tarjetas_amarillas": 3,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 La Liga",
+          "1 Supercopa de España",
+          "1 Campeonato de Portugal"
+        ],
+        "debut": "13/08/2022",
+        "valor_mercado": "€60M",
+        "foto": "raphinha",
+        "id": 16,
+        "edad": 29
+      },
+      {
+        "nombre": "Pau",
+        "apellido": "Víctor",
+        "dorsal": 18,
+        "posicion": "Delantero",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "26/11/2001",
+        "lugar_nacimiento": "Sant Cugat del Vallès, España",
+        "altura": "184 cm",
+        "peso": "76 kg",
+        "biografia": "Fichado definitivamente tras una gran temporada en el filial. Es un delantero muy oportunista, con un gran olfato goleador y capacidad para jugar en cualquiera de las tres posiciones de ataque.\n\nDestacó en la pretemporada anotando varios goles importantes contra grandes equipos europeos. Su rol es el de agitador de partidos desde el banquillo y relevo puntual de Lewandowski, aprovechando cada minuto con su intensidad y buenos movimientos.",
+        "estadisticas": {
+          "partidos": 16,
+          "goles": 2,
+          "asistencias": 1,
+          "tarjetas_amarillas": 1,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "Máximo goleador Primera RFEF 2024"
+        ],
+        "debut": "17/08/2024",
+        "valor_mercado": "€4M",
+        "foto": "pau_victor",
+        "id": 17,
+        "edad": 24
+      },
+      {
+        "nombre": "Ferran",
+        "apellido": "Torres",
+        "dorsal": 7,
+        "posicion": "Delantero",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "29/02/2000",
+        "lugar_nacimiento": "Foios, España",
+        "altura": "184 cm",
+        "peso": "77 kg",
+        "biografia": "Conocido como el 'Tiburón', Ferran destaca por su mentalidad fuerte y su capacidad de desmarque. Es un jugador muy polivalente que puede jugar de '9' o en las bandas, aportando siempre profundidad.\n\nSu ética de trabajo es incuestionable, siendo una pieza valiosa para la rotación del ataque. Su capacidad para leer el juego y aparecer en el momento justo lo han hecho un goleador recurrente tanto en el club como en la selección española.",
+        "estadisticas": {
+          "partidos": 14,
+          "goles": 1,
+          "asistencias": 2,
+          "tarjetas_amarillas": 2,
+          "tarjetas_rojas": 1
+        },
+        "palmares": [
+          "1 La Liga",
+          "1 Eurocopa",
+          "1 Premier League",
+          "1 Copa del Rey"
+        ],
+        "debut": "12/01/2022",
+        "valor_mercado": "€30M",
+        "foto": "ferran_torres",
+        "id": 18,
+        "edad": 25
+      },
+      {
+        "nombre": "Fermín",
+        "apellido": "López",
+        "dorsal": 16,
+        "posicion": "Centrocampista",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "11/05/2003",
+        "lugar_nacimiento": "El Campillo, España",
+        "altura": "174 cm",
+        "peso": "68 kg",
+        "biografia": "Canterano que explotó tras una exitosa cesión en el Linares. Destaca por su dinamismo, llegada al área desde segunda línea y un fantástico golpeo de balón con ambas piernas.\n\nSu energía contagiosa y capacidad para presionar alto lo hacen perfecto para el estilo de Flick. Fue una de las grandes revelaciones de la pasada temporada y consolidó su irrupción ganando el oro olímpico en París.",
+        "estadisticas": {
+          "partidos": 12,
+          "goles": 3,
+          "asistencias": 2,
+          "tarjetas_amarillas": 1,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 Eurocopa",
+          "Medalla de Oro JJOO 2024"
+        ],
+        "debut": "27/08/2023",
+        "valor_mercado": "€50M",
+        "foto": "fermin_lopez",
+        "id": 19,
+        "edad": 21
+      },
+      {
+        "nombre": "Andreas",
+        "apellido": "Christensen",
+        "dorsal": 15,
+        "posicion": "Defensa",
+        "nacionalidad": "Danesa",
+        "fecha_nacimiento": "10/04/1996",
+        "lugar_nacimiento": "Lillerød, Dinamarca",
+        "altura": "187 cm",
+        "peso": "82 kg",
+        "biografia": "Central elegante y tácticamente brillante. Es un seguro de vida en la salida de balón gracias a su tranquilidad y precisión en los pases. Llegó libre procedente del Chelsea y se adaptó inmediatamente.\n\nSu inteligencia le permite anticiparse a las jugadas sin necesidad de recurrir a la falta. La pasada temporada demostró su versatilidad actuando como mediocentro defensivo durante una plaga de lesiones, antes de sufrir él mismo problemas físicos este año.",
+        "estadisticas": {
+          "partidos": 1,
+          "goles": 0,
+          "asistencias": 0,
+          "tarjetas_amarillas": 0,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 La Liga",
+          "1 Supercopa de España",
+          "1 Champions League",
+          "1 Europa League",
+          "1 Mundial de Clubes"
+        ],
+        "debut": "13/08/2022",
+        "valor_mercado": "€30M",
+        "foto": "christensen",
+        "id": 20,
+        "edad": 29
+      },
+      {
+        "nombre": "Eric",
+        "apellido": "García",
+        "dorsal": 24,
+        "posicion": "Defensa",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "09/01/2001",
+        "lugar_nacimiento": "Barcelona, España",
+        "altura": "182 cm",
+        "peso": "76 kg",
+        "biografia": "Regresó al club en el que se formó tras una productiva etapa en el Manchester City y una fantástica cesión en el Girona que le valió su vuelta este verano.\n\nEs un especialista en la salida del balón y su polivalencia le permite jugar tanto de central, lateral derecho e incluso como pivote en el mediocampo. También fue clave en el oro olímpico en París.",
+        "estadisticas": {
+          "partidos": 8,
+          "goles": 0,
+          "asistencias": 1,
+          "tarjetas_amarillas": 1,
+          "tarjetas_rojas": 1
+        },
+        "palmares": [
+          "1 La Liga",
+          "1 Supercopa de España",
+          "1 Premier League",
+          "Medalla de Oro JJOO 2024"
+        ],
+        "debut": "15/08/2021",
+        "valor_mercado": "€20M",
+        "foto": "eric_garcia",
+        "id": 21,
+        "edad": 24
+      },
+      {
+        "nombre": "Ansu",
+        "apellido": "Fati",
+        "dorsal": 10,
+        "posicion": "Delantero",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "31/10/2002",
+        "lugar_nacimiento": "Bissau, Guinea-Bisáu",
+        "altura": "178 cm",
+        "peso": "66 kg",
+        "biografia": "Extremo eléctrico y con un instinto goleador innato, heredero del icónico dorsal 10. Tras deslumbrar al mundo en su debut, graves lesiones han puesto a prueba su resiliencia.\n\nVolvió de su cesión en el Brighton buscando reencontrarse con su mejor versión. Es impredecible en el área, letal en la finalización y capaz de cambiar el ritmo de cualquier partido.",
+        "estadisticas": {
+          "partidos": 6,
+          "goles": 0,
+          "asistencias": 0,
+          "tarjetas_amarillas": 0,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 La Liga",
+          "1 Copa del Rey",
+          "1 Supercopa de España",
+          "1 UEFA Nations League"
+        ],
+        "debut": "25/08/2019",
+        "valor_mercado": "€15M",
+        "foto": "ansu_fati",
+        "id": 22,
+        "edad": 22
+      },
+      {
+        "nombre": "Pablo",
+        "apellido": "Torre",
+        "dorsal": 14,
+        "posicion": "Mediocampista Ofensivo",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "03/04/2003",
+        "lugar_nacimiento": "Soto de la Marina, España",
+        "altura": "173 cm",
+        "peso": "63 kg",
+        "biografia": "Jugador de calidad exquisita de mediocampo hacia adelante. Tras curtirse en el Girona la temporada pasada, ha encontrado su sitio en el esquema de Flick como mediapunta o interior más avanzado.\n\nTiene una gran facilidad para filtrar pases y un excelente disparo de media distancia. Su descaro para buscar la portería rival lo convierte en una excelente alternativa para desatascar defensas cerradas.",
+        "estadisticas": {
+          "partidos": 10,
+          "goles": 3,
+          "asistencias": 1,
+          "tarjetas_amarillas": 0,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [
+          "1 La Liga"
+        ],
+        "debut": "07/09/2022",
+        "valor_mercado": "€5M",
+        "foto": "pablo_torre",
+        "id": 23,
+        "edad": 22
+      },
+      {
+        "nombre": "Héctor",
+        "apellido": "Fort",
+        "dorsal": 32,
+        "posicion": "Defensa",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "02/08/2006",
+        "lugar_nacimiento": "Barcelona, España",
+        "altura": "181 cm",
+        "peso": "72 kg",
+        "biografia": "Lateral derecho surgido de La Masia. Es capaz de jugar a buen nivel en ambos costados de la defensa. Destaca por su velocidad, valentía al cruce y su enorme despliegue físico.\n\nHa ido sumando minutos en el primer equipo consolidándose como la primera alternativa para dar descanso a los laterales titulares. Posee una gran personalidad pese a su corta edad.",
+        "estadisticas": {
+          "partidos": 6,
+          "goles": 0,
+          "asistencias": 0,
+          "tarjetas_amarillas": 1,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [],
+        "debut": "13/12/2023",
+        "valor_mercado": "€10M",
+        "foto": "hector_fort",
+        "id": 24,
+        "edad": 18
+      },
+      {
+        "nombre": "Gerard",
+        "apellido": "Martín",
+        "dorsal": 35,
+        "posicion": "Lateral Izquierdo",
+        "nacionalidad": "Española",
+        "fecha_nacimiento": "26/02/2002",
+        "lugar_nacimiento": "Esplugues de Llobregat, España",
+        "altura": "186 cm",
+        "peso": "78 kg",
+        "biografia": "Lateral izquierdo de perfil más defensivo y corpulento, incorporado recientemente a la dinámica del primer equipo por expreso deseo de Hansi Flick tras destacar en el filial.\n\nEs solvente en los duelos individuales, fuerte en el juego aéreo y disciplinado tácticamente, aportando equilibrio a una defensa de vocación ofensiva.",
+        "estadisticas": {
+          "partidos": 10,
+          "goles": 0,
+          "asistencias": 1,
+          "tarjetas_amarillas": 2,
+          "tarjetas_rojas": 0
+        },
+        "palmares": [],
+        "debut": "17/08/2024",
+        "valor_mercado": "€3M",
+        "foto": "gerard_martin",
+        "id": 25,
+        "edad": 23
+      }
+    ],
+    "cantera": {
+      "nombre": "La Masia",
+      "descripcion": "Famosa academia juvenil del FC Barcelona.",
+      "jugadores_famosos": [
+        "Lionel Messi",
+        "Xavi",
+        "Iniesta"
+      ],
+      "filosofia": "Posesión y juego ofensivo"
+    },
+    "filiales": [
+      {
+        "nombre": "Barça Atlètic",
+        "categoria": "Primera Federación",
+        "estadio": "Estadi Johan Cruyff"
+      }
+    ],
+    "valores": [
+      "Respeto",
+      "Esfuerzo",
+      "Ambición",
+      "Trabajo en equipo",
+      "Humildad"
+    ],
+    "socios": "144.000",
+    "seguidores_redes": {
+      "instagram": "122M",
+      "twitter": "47M",
+      "facebook": "112M",
+      "tiktok": "30M",
+      "youtube": "15M"
+    },
+    "patrocinadores": {
+      "principal": "Spotify",
+      "equipacion": "Nike",
+      "otros": [
+        "Estrella Damm"
+      ]
+    },
+    "presupuesto": "859 millones de euros",
+    "valor_equipo": "4.76 mil millones de dólares",
+    "web_oficial": "https://www.fcbarcelona.es"
+  },
+  "jugadores": [
+    {
+      "nombre": "Marc-André",
+      "apellido": "ter Stegen",
+      "dorsal": 1,
+      "posicion": "Portero",
+      "nacionalidad": "Alemana",
+      "fecha_nacimiento": "30/04/1992",
+      "lugar_nacimiento": "Mönchengladbach, Alemania",
+      "altura": "187 cm",
+      "peso": "85 kg",
+      "biografia": "Capitán del primer equipo y uno de los mejores porteros del mundo. Con una técnica de pies excepcional, es fundamental en la salida de balón del Barça. Ha defendido la portería blaugrana desde 2014, convirtiéndose en una leyenda del club.\n\nTras la salida de otros pesos pesados, Ter Stegen ha asumido el liderazgo total del vestuario. Su seguridad bajo palos y su capacidad para ganar duelos individuales lo hacen insustituible. Actualmente se recupera de una lesión grave de rodilla sufrida al inicio de la temporada.",
+      "estadisticas": {
+        "partidos": 7,
+        "goles": 0,
+        "asistencias": 0,
+        "tarjetas_amarillas": 0,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 Champions League",
+        "5 La Liga",
+        "5 Copa del Rey",
+        "1 Mundial de Clubes"
+      ],
+      "debut": "17/09/2014",
+      "valor_mercado": "€20M",
+      "foto": "ter_stegen",
+      "id": 1,
+      "edad": 33
+    },
+    {
+      "nombre": "Iñaki",
+      "apellido": "Peña",
+      "dorsal": 13,
+      "posicion": "Portero",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "02/03/1999",
+      "lugar_nacimiento": "Alicante, España",
+      "altura": "184 cm",
+      "peso": "78 kg",
+      "biografia": "Formado en La Masia, Iñaki Peña es un portero ágil y con grandes reflejos. Tras una exitosa cesión en el Galatasaray donde demostró su nivel europeo, regresó al Barça para ser el relevo de garantías de Ter Stegen.\n\nHa demostrado personalidad en momentos críticos, como durante la baja prolongada del alemán la temporada pasada. Es conocido por su seguridad en el juego aéreo a pesar de no ser el portero más alto, y su excelente distribución con los pies.",
+      "estadisticas": {
+        "partidos": 15,
+        "goles": 0,
+        "asistencias": 0,
+        "tarjetas_amarillas": 1,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 La Liga",
+        "1 Supercopa de España"
+      ],
+      "debut": "01/11/2022",
+      "valor_mercado": "€8M",
+      "foto": "inaki_pena",
+      "id": 2,
+      "edad": 26
+    },
+    {
+      "nombre": "Wojciech",
+      "apellido": "Szczęsny",
+      "dorsal": 25,
+      "posicion": "Portero",
+      "nacionalidad": "Polaca",
+      "fecha_nacimiento": "18/04/1990",
+      "lugar_nacimiento": "Varsovia, Polonia",
+      "altura": "195 cm",
+      "peso": "90 kg",
+      "biografia": "Incorporado de emergencia tras la lesión de Ter Stegen, el portero polaco salió de su retiro para ayudar al club. Con una dilatada experiencia en equipos como Arsenal, Juventus y la selección de Polonia, aporta veteranía y seguridad inmediata.\n\nEs un guardameta imponente físicamente, excelente en los bloqueos y muy difícil de batir en el uno contra uno. Su adaptación al grupo ha sido rápida gracias a su amistad con su compatriota Robert Lewandowski.",
+      "estadisticas": {
+        "partidos": 0,
+        "goles": 0,
+        "asistencias": 0,
+        "tarjetas_amarillas": 0,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "3 Serie A",
+        "3 Coppa Italia",
+        "2 FA Cup"
+      ],
+      "debut": "N/A",
+      "valor_mercado": "€1M",
+      "foto": "szczesny",
+      "id": 3,
+      "edad": 35
+    },
+    {
+      "nombre": "Pau",
+      "apellido": "Cubarsí",
+      "dorsal": 2,
+      "posicion": "Defensa",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "22/01/2007",
+      "lugar_nacimiento": "Estanyol, España",
+      "altura": "184 cm",
+      "peso": "71 kg",
+      "biografia": "La gran revelación de la cantera en la defensa. A pesar de su extrema juventud, exhibe una madurez impropia, destacando por una limpieza quirúrgica en la salida de balón y una colocación defensiva perfecta.\n\nSe ha consolidado como titular indiscutible gracias a su capacidad para romper líneas con pases largos y su frialdad ante la presión. Es considerado el futuro central de la selección española y del FC Barcelona para la próxima década.",
+      "estadisticas": {
+        "partidos": 22,
+        "goles": 0,
+        "asistencias": 1,
+        "tarjetas_amarillas": 3,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "Medalla de Oro JJOO 2024"
+      ],
+      "debut": "18/01/2024",
+      "valor_mercado": "€40M",
+      "foto": "cubarsi",
+      "id": 4,
+      "edad": 19
+    },
+    {
+      "nombre": "Alejandro",
+      "apellido": "Balde",
+      "dorsal": 3,
+      "posicion": "Defensa",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "18/10/2003",
+      "lugar_nacimiento": "Barcelona, España",
+      "altura": "175 cm",
+      "peso": "69 kg",
+      "biografia": "Lateral izquierdo de una potencia y velocidad asombrosas. Se ha adueñado del carril izquierdo gracias a su capacidad para desbordar y llegar a línea de fondo, siendo un puñal en ataque y recuperando posición rápidamente.\n\nFormado en La Masia, representa el lateral moderno que el Barça necesita. Tras superar una lesión importante, ha vuelto a su mejor nivel bajo las órdenes de Hansi Flick, siendo clave en la amplitud del campo por la izquierda.",
+      "estadisticas": {
+        "partidos": 20,
+        "goles": 0,
+        "asistencias": 3,
+        "tarjetas_amarillas": 2,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 La Liga",
+        "1 Supercopa de España"
+      ],
+      "debut": "14/09/2021",
+      "valor_mercado": "€40M",
+      "foto": "balde",
+      "id": 5,
+      "edad": 22
+    },
+    {
+      "nombre": "Ronald",
+      "apellido": "Araujo",
+      "dorsal": 4,
+      "posicion": "Defensa",
+      "nacionalidad": "Uruguaya",
+      "fecha_nacimiento": "07/03/1999",
+      "lugar_nacimiento": "Rivera, Uruguay",
+      "altura": "192 cm",
+      "peso": "91 kg",
+      "biografia": "El pulmón y el coraje de la defensa blaugrana. Araujo es un central con un portento físico envidiable, dominante en el juego aéreo y casi imbatible en velocidad. Su garra uruguaya lo ha convertido en uno de los capitanes.\n\nEs capaz de jugar tanto de central como de lateral derecho en partidos específicos para frenar a extremos rápidos. Su liderazgo comunicativo en el campo es vital para organizar la línea defensiva en el esquema de presión alta del equipo.",
+      "estadisticas": {
+        "partidos": 0,
+        "goles": 0,
+        "asistencias": 0,
+        "tarjetas_amarillas": 0,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 La Liga",
+        "1 Copa del Rey",
+        "1 Supercopa de España"
+      ],
+      "debut": "06/10/2019",
+      "valor_mercado": "€70M",
+      "foto": "araujo",
+      "id": 6,
+      "edad": 26
+    },
+    {
+      "nombre": "Iñigo",
+      "apellido": "Martínez",
+      "dorsal": 5,
+      "posicion": "Defensa",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "17/05/1991",
+      "lugar_nacimiento": "Ondarroa, España",
+      "altura": "182 cm",
+      "peso": "76 kg",
+      "biografia": "Central veterano con una pierna izquierda privilegiada para la salida de balón. Aporta la experiencia necesaria en una defensa muy joven, destacando por su contundencia en el corte y su inteligencia táctica.\n\nSe ha convertido en un fijo para Hansi Flick, liderando la línea del fuera de juego y aportando seguridad en los balones parados. Su carácter competitivo ayuda a mantener la intensidad del grupo durante los noventa minutos.",
+      "estadisticas": {
+        "partidos": 21,
+        "goles": 1,
+        "asistencias": 1,
+        "tarjetas_amarillas": 5,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 Supercopa de España (con Athletic)"
+      ],
+      "debut": "03/09/2023",
+      "valor_mercado": "€5M",
+      "foto": "inigo_martinez",
+      "id": 7,
+      "edad": 34
+    },
+    {
+      "nombre": "Jules",
+      "apellido": "Koundé",
+      "dorsal": 23,
+      "posicion": "Defensa",
+      "nacionalidad": "Francesa",
+      "fecha_nacimiento": "12/11/1998",
+      "lugar_nacimiento": "París, Francia",
+      "altura": "180 cm",
+      "peso": "75 kg",
+      "biografia": "Defensa polivalente que rinde al máximo nivel tanto de central como de lateral derecho. Posee una gran capacidad de salto y una salida de balón muy limpia, siendo fundamental en la construcción del juego desde atrás.\n\nSu profesionalidad es ejemplar, destacando por sus entrenamientos individuales y su resistencia física. Esta temporada se ha consolidado como uno de los mejores laterales derechos de Europa, combinando solidez defensiva con subidas peligrosas al ataque.",
+      "estadisticas": {
+        "partidos": 23,
+        "goles": 1,
+        "asistencias": 4,
+        "tarjetas_amarillas": 1,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 La Liga",
+        "1 Supercopa de España",
+        "1 UEFA Nations League"
+      ],
+      "debut": "28/08/2022",
+      "valor_mercado": "€50M",
+      "foto": "kounde",
+      "id": 8,
+      "edad": 27
+    },
+    {
+      "nombre": "Gavi",
+      "apellido": "Páez",
+      "dorsal": 6,
+      "posicion": "Centrocampista",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "05/08/2004",
+      "lugar_nacimiento": "Los Palacios y Villafranca, España",
+      "altura": "173 cm",
+      "peso": "70 kg",
+      "biografia": "El alma del equipo. Gavi representa la lucha, la intensidad y la calidad técnica de La Masia. Ganador del Golden Boy y el Trofeo Kopa, es capaz de ocupar cualquier posición en el centro del campo.\n\nTras superar una rotura de ligamentos, su regreso ha sido esperado con ansia por la afición. Su capacidad para presionar y recuperar balones, unida a su técnica para jugar en espacios reducidos, lo hacen un jugador único en la plantilla.",
+      "estadisticas": {
+        "partidos": 8,
+        "goles": 0,
+        "asistencias": 0,
+        "tarjetas_amarillas": 2,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 La Liga",
+        "1 Supercopa de España",
+        "1 UEFA Nations League"
+      ],
+      "debut": "29/08/2021",
+      "valor_mercado": "€90M",
+      "foto": "gavi",
+      "id": 9,
+      "edad": 21
+    },
+    {
+      "nombre": "Pedri",
+      "apellido": "González",
+      "dorsal": 8,
+      "posicion": "Centrocampista",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "25/11/2002",
+      "lugar_nacimiento": "Tegueste, España",
+      "altura": "174 cm",
+      "peso": "68 kg",
+      "biografia": "El cerebro del juego blaugrana. Pedri tiene una visión de juego privilegiada y un control del tiempo que recuerda a las grandes leyendas del club. Es el encargado de poner la pausa y el último pase.\n\nSu capacidad para girar sobre sí mismo y zafarse de la presión rival es su marca registrada. Bajo el nuevo sistema, juega con más libertad para llegar al área contraria, lo que ha aumentado su cifra de goles y asistencias.",
+      "estadisticas": {
+        "partidos": 22,
+        "goles": 4,
+        "asistencias": 5,
+        "tarjetas_amarillas": 1,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 La Liga",
+        "1 Copa del Rey",
+        "1 Supercopa de España",
+        "1 Eurocopa"
+      ],
+      "debut": "27/09/2020",
+      "valor_mercado": "€80M",
+      "foto": "pedri",
+      "id": 10,
+      "edad": 23
+    },
+    {
+      "nombre": "Dani",
+      "apellido": "Olmo",
+      "dorsal": 20,
+      "posicion": "Centrocampista",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "07/05/1998",
+      "lugar_nacimiento": "Terrassa, España",
+      "altura": "182 cm",
+      "peso": "73 kg",
+      "biografia": "Canterano que regresó al club tras triunfar en el extranjero. Destaca por su polivalencia, pudiendo actuar de mediapunta o extremo. Tiene una visión de juego extraordinaria y gran capacidad goleadora desde segunda línea.\n\nFue clave en la consecución de la Eurocopa 2024 con España. Su regreso al Barça ha inyectado creatividad y gol al mediocampo, entendiéndose a la perfección con los delanteros y mejorando la fluidez del ataque.",
+      "estadisticas": {
+        "partidos": 12,
+        "goles": 6,
+        "asistencias": 2,
+        "tarjetas_amarillas": 1,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 Eurocopa",
+        "1 UEFA Nations League",
+        "5 Ligas Croatas",
+        "1 Copa Alemana"
+      ],
+      "debut": "27/08/2024",
+      "valor_mercado": "€60M",
+      "foto": "dani_olmo",
+      "id": 11,
+      "edad": 27
+    },
+    {
+      "nombre": "Marc",
+      "apellido": "Casadó",
+      "dorsal": 17,
+      "posicion": "Centrocampista",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "14/09/2003",
+      "lugar_nacimiento": "Sant Pere de Vilamajor, España",
+      "altura": "172 cm",
+      "peso": "66 kg",
+      "biografia": "El nuevo pivote de La Masia. Tras años capitaneando el filial, ha dado el salto al primer equipo con una jerarquía asombrosa. Destaca por su inteligencia táctica, posicionamiento y capacidad de recuperación.\n\nSe ha ganado la confianza de Flick gracias a su regularidad y su gran nivel en los partidos de alta exigencia. Aporta el equilibrio necesario para que los interiores puedan brillar en ataque, siendo el ancla del equipo.",
+      "estadisticas": {
+        "partidos": 20,
+        "goles": 0,
+        "asistencias": 5,
+        "tarjetas_amarillas": 4,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 La Liga (como suplente)"
+      ],
+      "debut": "01/11/2022",
+      "valor_mercado": "€20M",
+      "foto": "casado",
+      "id": 12,
+      "edad": 22
+    },
+    {
+      "nombre": "Frenkie",
+      "apellido": "de Jong",
+      "dorsal": 21,
+      "posicion": "Centrocampista",
+      "nacionalidad": "Neerlandesa",
+      "fecha_nacimiento": "12/05/1997",
+      "lugar_nacimiento": "Arkel, Países Bajos",
+      "altura": "180 cm",
+      "peso": "74 kg",
+      "biografia": "Elegancia y conducción en estado puro. Frenkie es un centrocampista todoterreno capaz de romper líneas en conducción y organizar el juego desde la base. Es uno de los capitanes del equipo.\n\nSu capacidad para resistir la presión rival es fundamental en partidos trabados. Aunque ha tenido problemas con las lesiones este año, sigue siendo un pilar por su experiencia y calidad técnica, apoyando tanto en tareas defensivas como ofensivas.",
+      "estadisticas": {
+        "partidos": 10,
+        "goles": 0,
+        "asistencias": 0,
+        "tarjetas_amarillas": 1,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 La Liga",
+        "1 Copa del Rey",
+        "1 Supercopa de España",
+        "1 Eredivisie"
+      ],
+      "debut": "16/08/2019",
+      "valor_mercado": "€60M",
+      "foto": "de_jong",
+      "id": 13,
+      "edad": 28
+    },
+    {
+      "nombre": "Robert",
+      "apellido": "Lewandowski",
+      "dorsal": 9,
+      "posicion": "Delantero",
+      "nacionalidad": "Polaca",
+      "fecha_nacimiento": "21/08/1988",
+      "lugar_nacimiento": "Varsovia, Polonia",
+      "altura": "185 cm",
+      "peso": "81 kg",
+      "biografia": "Goleador insaciable y referente absoluto en el área. Ganador de múltiples Botas de Oro, Lewandowski aporta experiencia, profesionalidad y, sobre todo, goles fundamentales para competir por todos los títulos.\n\nBajo el mando de Flick ha recuperado su mejor versión, liderando la tabla de goleadores y siendo vital en la presión alta. Su capacidad para jugar de espaldas y conectar con los extremos le da otra dimensión al ataque blaugrana.",
+      "estadisticas": {
+        "partidos": 23,
+        "goles": 22,
+        "asistencias": 3,
+        "tarjetas_amarillas": 1,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 Champions League",
+        "1 La Liga",
+        "10 Bundesliga",
+        "1 Mundial de Clubes"
+      ],
+      "debut": "13/08/2022",
+      "valor_mercado": "€15M",
+      "foto": "lewandowski",
+      "id": 14,
+      "edad": 37
+    },
+    {
+      "nombre": "Lamine",
+      "apellido": "Yamal",
+      "dorsal": 19,
+      "posicion": "Delantero",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "13/07/2007",
+      "lugar_nacimiento": "Esplugues de Llobregat, España",
+      "altura": "180 cm",
+      "peso": "72 kg",
+      "biografia": "Fenómeno mundial y nueva estrella de La Masia. Con solo 17 años, Lamine Yamal ha roto todos los récords de precocidad, destacando por su regate, visión de juego y capacidad para decidir partidos por sí mismo.\n\nFundamental en la Eurocopa 2024 con España, su descaro en banda derecha y su zurda prodigiosa lo convierten en el jugador más determinante de la plantilla. Es el ídolo actual de la afición en Montjuïc y el futuro Camp Nou.",
+      "estadisticas": {
+        "partidos": 22,
+        "goles": 7,
+        "asistencias": 10,
+        "tarjetas_amarillas": 1,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 Eurocopa",
+        "1 La Liga"
+      ],
+      "debut": "29/04/2023",
+      "valor_mercado": "€150M",
+      "foto": "lamine_yamal",
+      "id": 15,
+      "edad": 18
+    },
+    {
+      "nombre": "Raphael",
+      "apellido": "Dias Belloli",
+      "dorsal": 11,
+      "posicion": "Delantero",
+      "nacionalidad": "Brasileña",
+      "fecha_nacimiento": "14/12/1996",
+      "lugar_nacimiento": "Porto Alegre, Brasil",
+      "altura": "176 cm",
+      "peso": "68 kg",
+      "biografia": "Raphinha es la definición de trabajo y eficacia. Sus números en cuanto a goles y asistencias lo sitúan entre los mejores extremos del mundo, destacando también por su enorme sacrificio defensivo.\n\nNombrero capitán esta temporada, ha mostrado un nivel espectacular jugando tanto por banda como más centrado. Su excelente golpeo a balón parado y su capacidad de desmarque al espacio lo hacen un jugador fundamental para el sistema táctico actual.",
+      "estadisticas": {
+        "partidos": 23,
+        "goles": 14,
+        "asistencias": 12,
+        "tarjetas_amarillas": 3,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 La Liga",
+        "1 Supercopa de España",
+        "1 Campeonato de Portugal"
+      ],
+      "debut": "13/08/2022",
+      "valor_mercado": "€60M",
+      "foto": "raphinha",
+      "id": 16,
+      "edad": 29
+    },
+    {
+      "nombre": "Pau",
+      "apellido": "Víctor",
+      "dorsal": 18,
+      "posicion": "Delantero",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "26/11/2001",
+      "lugar_nacimiento": "Sant Cugat del Vallès, España",
+      "altura": "184 cm",
+      "peso": "76 kg",
+      "biografia": "Fichado definitivamente tras una gran temporada en el filial. Es un delantero muy oportunista, con un gran olfato goleador y capacidad para jugar en cualquiera de las tres posiciones de ataque.\n\nDestacó en la pretemporada anotando varios goles importantes contra grandes equipos europeos. Su rol es el de agitador de partidos desde el banquillo y relevo puntual de Lewandowski, aprovechando cada minuto con su intensidad y buenos movimientos.",
+      "estadisticas": {
+        "partidos": 16,
+        "goles": 2,
+        "asistencias": 1,
+        "tarjetas_amarillas": 1,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "Máximo goleador Primera RFEF 2024"
+      ],
+      "debut": "17/08/2024",
+      "valor_mercado": "€4M",
+      "foto": "pau_victor",
+      "id": 17,
+      "edad": 24
+    },
+    {
+      "nombre": "Ferran",
+      "apellido": "Torres",
+      "dorsal": 7,
+      "posicion": "Delantero",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "29/02/2000",
+      "lugar_nacimiento": "Foios, España",
+      "altura": "184 cm",
+      "peso": "77 kg",
+      "biografia": "Conocido como el 'Tiburón', Ferran destaca por su mentalidad fuerte y su capacidad de desmarque. Es un jugador muy polivalente que puede jugar de '9' o en las bandas, aportando siempre profundidad.\n\nSu ética de trabajo es incuestionable, siendo una pieza valiosa para la rotación del ataque. Su capacidad para leer el juego y aparecer en el momento justo lo han hecho un goleador recurrente tanto en el club como en la selección española.",
+      "estadisticas": {
+        "partidos": 14,
+        "goles": 1,
+        "asistencias": 2,
+        "tarjetas_amarillas": 2,
+        "tarjetas_rojas": 1
+      },
+      "palmares": [
+        "1 La Liga",
+        "1 Eurocopa",
+        "1 Premier League",
+        "1 Copa del Rey"
+      ],
+      "debut": "12/01/2022",
+      "valor_mercado": "€30M",
+      "foto": "ferran_torres",
+      "id": 18,
+      "edad": 25
+    },
+    {
+      "nombre": "Fermín",
+      "apellido": "López",
+      "dorsal": 16,
+      "posicion": "Centrocampista",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "11/05/2003",
+      "lugar_nacimiento": "El Campillo, España",
+      "altura": "174 cm",
+      "peso": "68 kg",
+      "biografia": "Canterano que explotó tras una exitosa cesión en el Linares. Destaca por su dinamismo, llegada al área desde segunda línea y un fantástico golpeo de balón con ambas piernas.\n\nSu energía contagiosa y capacidad para presionar alto lo hacen perfecto para el estilo de Flick. Fue una de las grandes revelaciones de la pasada temporada y consolidó su irrupción ganando el oro olímpico en París.",
+      "estadisticas": {
+        "partidos": 12,
+        "goles": 3,
+        "asistencias": 2,
+        "tarjetas_amarillas": 1,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 Eurocopa",
+        "Medalla de Oro JJOO 2024"
+      ],
+      "debut": "27/08/2023",
+      "valor_mercado": "€50M",
+      "foto": "fermin_lopez",
+      "id": 19,
+      "edad": 21
+    },
+    {
+      "nombre": "Andreas",
+      "apellido": "Christensen",
+      "dorsal": 15,
+      "posicion": "Defensa",
+      "nacionalidad": "Danesa",
+      "fecha_nacimiento": "10/04/1996",
+      "lugar_nacimiento": "Lillerød, Dinamarca",
+      "altura": "187 cm",
+      "peso": "82 kg",
+      "biografia": "Central elegante y tácticamente brillante. Es un seguro de vida en la salida de balón gracias a su tranquilidad y precisión en los pases. Llegó libre procedente del Chelsea y se adaptó inmediatamente.\n\nSu inteligencia le permite anticiparse a las jugadas sin necesidad de recurrir a la falta. La pasada temporada demostró su versatilidad actuando como mediocentro defensivo durante una plaga de lesiones, antes de sufrir él mismo problemas físicos este año.",
+      "estadisticas": {
+        "partidos": 1,
+        "goles": 0,
+        "asistencias": 0,
+        "tarjetas_amarillas": 0,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 La Liga",
+        "1 Supercopa de España",
+        "1 Champions League",
+        "1 Europa League",
+        "1 Mundial de Clubes"
+      ],
+      "debut": "13/08/2022",
+      "valor_mercado": "€30M",
+      "foto": "christensen",
+      "id": 20,
+      "edad": 29
+    },
+    {
+      "nombre": "Eric",
+      "apellido": "García",
+      "dorsal": 24,
+      "posicion": "Defensa",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "09/01/2001",
+      "lugar_nacimiento": "Barcelona, España",
+      "altura": "182 cm",
+      "peso": "76 kg",
+      "biografia": "Regresó al club en el que se formó tras una productiva etapa en el Manchester City y una fantástica cesión en el Girona que le valió su vuelta este verano.\n\nEs un especialista en la salida del balón y su polivalencia le permite jugar tanto de central, lateral derecho e incluso como pivote en el mediocampo. También fue clave en el oro olímpico en París.",
+      "estadisticas": {
+        "partidos": 8,
+        "goles": 0,
+        "asistencias": 1,
+        "tarjetas_amarillas": 1,
+        "tarjetas_rojas": 1
+      },
+      "palmares": [
+        "1 La Liga",
+        "1 Supercopa de España",
+        "1 Premier League",
+        "Medalla de Oro JJOO 2024"
+      ],
+      "debut": "15/08/2021",
+      "valor_mercado": "€20M",
+      "foto": "eric_garcia",
+      "id": 21,
+      "edad": 24
+    },
+    {
+      "nombre": "Ansu",
+      "apellido": "Fati",
+      "dorsal": 10,
+      "posicion": "Delantero",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "31/10/2002",
+      "lugar_nacimiento": "Bissau, Guinea-Bisáu",
+      "altura": "178 cm",
+      "peso": "66 kg",
+      "biografia": "Extremo eléctrico y con un instinto goleador innato, heredero del icónico dorsal 10. Tras deslumbrar al mundo en su debut, graves lesiones han puesto a prueba su resiliencia.\n\nVolvió de su cesión en el Brighton buscando reencontrarse con su mejor versión. Es impredecible en el área, letal en la finalización y capaz de cambiar el ritmo de cualquier partido.",
+      "estadisticas": {
+        "partidos": 6,
+        "goles": 0,
+        "asistencias": 0,
+        "tarjetas_amarillas": 0,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 La Liga",
+        "1 Copa del Rey",
+        "1 Supercopa de España",
+        "1 UEFA Nations League"
+      ],
+      "debut": "25/08/2019",
+      "valor_mercado": "€15M",
+      "foto": "ansu_fati",
+      "id": 22,
+      "edad": 22
+    },
+    {
+      "nombre": "Pablo",
+      "apellido": "Torre",
+      "dorsal": 14,
+      "posicion": "Mediocampista Ofensivo",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "03/04/2003",
+      "lugar_nacimiento": "Soto de la Marina, España",
+      "altura": "173 cm",
+      "peso": "63 kg",
+      "biografia": "Jugador de calidad exquisita de mediocampo hacia adelante. Tras curtirse en el Girona la temporada pasada, ha encontrado su sitio en el esquema de Flick como mediapunta o interior más avanzado.\n\nTiene una gran facilidad para filtrar pases y un excelente disparo de media distancia. Su descaro para buscar la portería rival lo convierte en una excelente alternativa para desatascar defensas cerradas.",
+      "estadisticas": {
+        "partidos": 10,
+        "goles": 3,
+        "asistencias": 1,
+        "tarjetas_amarillas": 0,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [
+        "1 La Liga"
+      ],
+      "debut": "07/09/2022",
+      "valor_mercado": "€5M",
+      "foto": "pablo_torre",
+      "id": 23,
+      "edad": 22
+    },
+    {
+      "nombre": "Héctor",
+      "apellido": "Fort",
+      "dorsal": 32,
+      "posicion": "Defensa",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "02/08/2006",
+      "lugar_nacimiento": "Barcelona, España",
+      "altura": "181 cm",
+      "peso": "72 kg",
+      "biografia": "Lateral derecho surgido de La Masia. Es capaz de jugar a buen nivel en ambos costados de la defensa. Destaca por su velocidad, valentía al cruce y su enorme despliegue físico.\n\nHa ido sumando minutos en el primer equipo consolidándose como la primera alternativa para dar descanso a los laterales titulares. Posee una gran personalidad pese a su corta edad.",
+      "estadisticas": {
+        "partidos": 6,
+        "goles": 0,
+        "asistencias": 0,
+        "tarjetas_amarillas": 1,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [],
+      "debut": "13/12/2023",
+      "valor_mercado": "€10M",
+      "foto": "hector_fort",
+      "id": 24,
+      "edad": 18
+    },
+    {
+      "nombre": "Gerard",
+      "apellido": "Martín",
+      "dorsal": 35,
+      "posicion": "Lateral Izquierdo",
+      "nacionalidad": "Española",
+      "fecha_nacimiento": "26/02/2002",
+      "lugar_nacimiento": "Esplugues de Llobregat, España",
+      "altura": "186 cm",
+      "peso": "78 kg",
+      "biografia": "Lateral izquierdo de perfil más defensivo y corpulento, incorporado recientemente a la dinámica del primer equipo por expreso deseo de Hansi Flick tras destacar en el filial.\n\nEs solvente en los duelos individuales, fuerte en el juego aéreo y disciplinado tácticamente, aportando equilibrio a una defensa de vocación ofensiva.",
+      "estadisticas": {
+        "partidos": 10,
+        "goles": 0,
+        "asistencias": 1,
+        "tarjetas_amarillas": 2,
+        "tarjetas_rojas": 0
+      },
+      "palmares": [],
+      "debut": "17/08/2024",
+      "valor_mercado": "€3M",
+      "foto": "gerard_martin",
+      "id": 25,
+      "edad": 23
+    }
+  ],
+  "trofeos": [
+    {
+      "id": 1,
+      "nombre": "Liga Española",
+      "cantidad": 27,
+      "imagen": "🏆",
+      "descripcion": "Campeonato de Liga",
+      "ultimo_ganado": "2022-2023",
+      "anios_ganados": [
+        "1929",
+        "2023"
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Champions League",
+      "cantidad": 5,
+      "imagen": "🏆",
+      "descripcion": "Liga de Campeones",
+      "ultimo_ganado": "2014-2015",
+      "anios_ganados": [
+        "1992",
+        "2006",
+        "2009",
+        "2011",
+        "2015"
+      ]
+    }
+  ],
+  "estadisticas": {
+    "temporada": "2024-2025",
+    "liga": {
+      "posicion": 1,
+      "puntos": 38,
+      "partidos_jugados": 16,
+      "ganados": 12,
+      "empatados": 2,
+      "perdidos": 2,
+      "goles_favor": 50,
+      "goles_contra": 18,
+      "diferencia_goles": 32
+    },
+    "champions": {
+      "fase": "Fase de Liga",
+      "partidos_jugados": 6,
+      "ganados": 4,
+      "empatados": 1,
+      "perdidos": 1,
+      "goles_favor": 18,
+      "goles_contra": 8
+    },
+    "copa_rey": {
+      "fase": "Octavos de final",
+      "resultado": "En disputa"
+    }
+  },
+  "estadio": {
+    "nombre": "Spotify Camp Nou",
+    "capacidad": "99.354 espectadores",
+    "inauguracion": "24 de septiembre de 1957",
+    "dimensiones": "105m x 68m",
+    "propietario": "Fútbol Club Barcelona",
+    "direccion": "C. d'Arístides Maillol, 12, 08028 Barcelona",
+    "historia": "El Camp Nou es el estadio más grande de Europa y uno de los más emblemáticos del mundo. Ha sido testigo de innumerables momentos históricos del club, desde las 5 Copas de Europa hasta las épicas remontadas.",
+    "reformas": [
+      "1982: Ampliación para el Mundial de España",
+      "1994: Instalación de nueva iluminación",
+      "2008: Renovación de asientos",
+      "2023-2026: Reforma integral 'Espai Barça'"
+    ],
+    "records": {
+      "asistencia_record": "120.000 espectadores",
+      "fecha_record": "5 de marzo de 1986",
+      "partidos_jugados": 3000
+    }
+  },
+  "entrenador": {
+    "nombre": "Hansi Flick",
+    "nacionalidad": "Alemana",
+    "edad": 59,
+    "formacion_preferida": "4-2-3-1 / 4-3-3",
+    "desde": "29 de mayo de 2024",
+    "biografia": "Hansi Flick es uno de los entrenadores más exitosos de la última década. Tras una brillante carrera como asistente y entrenador, llevó al Bayern Munich a ganar el sextete histórico en 2020.",
+    "carrera": [
+      "2000-2005: Asistente en Austria Salzburgo",
+      "2006-2014: Asistente de la selección alemana",
+      "2019-2021: Entrenador del Bayern Munich",
+      "2021-2023: Seleccionador de Alemania",
+      "2024-presente: FC Barcelona"
+    ],
+    "titulos_ganados": 18
+  },
+  "historia": {
+    "fundacion": "29 de noviembre de 1899",
+    "fundadores": [
+      "Joan Gamper",
+      "Gualteri Wild",
+      "Lluís d'Ossó",
+      "Bartomeu Terradas",
+      "Otto Kunzle"
+    ],
+    "lema": "Més que un club",
+    "colores": [
+      "Azul",
+      "Granate"
+    ],
+    "himno": "Cant del Barça",
+    "presidentes_notables": [
+      "Joan Gamper (fundador)",
+      "Josep Lluís Núñez (1978-2000)",
+      "Joan Laporta"
+    ],
+    "momentos_historicos": [
+      {
+        "anio": 1902,
+        "titulo": "Primera final",
+        "descripcion": "Llega por primera vez a la final"
+      },
+      {
+        "anio": 1992,
+        "titulo": "Primera Copa",
+        "descripcion": "Wembley, Koeman"
+      },
+      {
+        "anio": 2009,
+        "titulo": "Sextete",
+        "descripcion": "Guardiola conquista los 6 títulos"
+      }
+    ],
+    "leyendas": [
+      "Lionel Messi",
+      "Johan Cruyff",
+      "Andrés Iniesta",
+      "Xavi Hernández",
+      "Ronaldinho",
+      "Carles Puyol"
+    ],
+    "records_club": {
+      "maxima_goleada": "Barcelona 10-1",
+      "mas_partidos": "Lionel Messi - 778 partidos",
+      "maximo_goleador": "Lionel Messi - 672 goles",
+      "mas_titulos": "Lionel Messi - 35 títulos"
+    }
+  }
+}
