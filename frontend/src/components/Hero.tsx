@@ -1,6 +1,10 @@
 import React from 'react';
 import { ClubInfo } from '../data/barcaData';
-import { Trophy, Users, Calendar, MapPin } from 'lucide-react';
+import { Box, Typography, Button, Grid, Paper, Chip, alpha } from '@mui/material';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import GroupsIcon from '@mui/icons-material/Groups';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import PlaceIcon from '@mui/icons-material/Place';
 
 interface HeroProps {
   clubInfo: ClubInfo;
@@ -9,128 +13,255 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ clubInfo }) => {
   const totalTrofeos = clubInfo.trofeos.reduce((acc, t) => acc + t.cantidad, 0);
 
+  const stats = [
+    { icon: <EmojiEventsIcon sx={{ fontSize: 32, color: '#fbbf24' }} />, value: totalTrofeos, label: 'Títulos Oficiales' },
+    { icon: <GroupsIcon sx={{ fontSize: 32, color: '#60a5fa' }} />, value: clubInfo.socios, label: 'Socios' },
+    { icon: <CalendarMonthIcon sx={{ fontSize: 32, color: '#f87171' }} />, value: '125', label: 'Años de Historia' },
+    { icon: <PlaceIcon sx={{ fontSize: 32, color: '#4ade80' }} />, value: '99k', label: 'Capacidad Camp Nou' },
+  ];
+
   return (
-    <div className="relative overflow-hidden">
-      {/* Fondo con gradiente y patrón */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-800 to-red-900">
-        {/* Patrón de rombos sutil */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+    <Box sx={{ position: 'relative', overflow: 'hidden' }}>
+      {/* Background */}
+      <Box
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(135deg, #1e3a6e 0%, #1a3366 30%, #6b1530 100%)',
+        }}
+      >
+        {/* Decorative circles */}
+        <Box
+          sx={{
+            position: 'absolute', top: -100, right: -100,
+            width: 400, height: 400,
+            borderRadius: '50%',
+            bgcolor: alpha('#c62828', 0.15),
+            filter: 'blur(80px)',
           }}
         />
+        <Box
+          sx={{
+            position: 'absolute', bottom: -100, left: -100,
+            width: 400, height: 400,
+            borderRadius: '50%',
+            bgcolor: alpha('#1565c0', 0.15),
+            filter: 'blur(80px)',
+          }}
+        />
+      </Box>
 
-        {/* Círculos decorativos */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-red-600/20 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
-      </div>
+      {/* Content */}
+      <Box
+        sx={{
+          position: 'relative',
+          zIndex: 1,
+          maxWidth: 1280,
+          mx: 'auto',
+          px: { xs: 2, sm: 3, lg: 4 },
+          py: { xs: 12, lg: 16 },
+        }}
+      >
+        <Grid container spacing={6} alignItems="center">
+          {/* Left - Text */}
+          <Grid size={{ xs: 12, lg: 6 }}>
+            <Box sx={{ textAlign: { xs: 'center', lg: 'left' } }}>
+              <Chip
+                label="Fundado en 1899"
+                icon={<Box component="span" sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: '#fbbf24', animation: 'pulse 2s infinite', '@keyframes pulse': { '0%, 100%': { opacity: 1 }, '50%': { opacity: 0.5 } } }} />}
+                sx={{
+                  mb: 3,
+                  bgcolor: alpha('#fff', 0.1),
+                  color: alpha('#fff', 0.9),
+                  backdropFilter: 'blur(10px)',
+                  border: `1px solid ${alpha('#fff', 0.2)}`,
+                  fontWeight: 500,
+                  '& .MuiChip-icon': { ml: 1 },
+                }}
+              />
 
-      {/* Contenido */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Lado izquierdo - Texto */}
-          <div className="text-center lg:text-left">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
-              <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
-              <span className="text-sm font-medium text-white/90">Fundado en 1899</span>
-            </div>
-
-            {/* Título principal */}
-            <h1 className="text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              <span className="block">Fútbol Club</span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500">
-                Barcelona
-              </span>
-            </h1>
-
-            {/* Lema */}
-            <p className="text-2xl lg:text-3xl font-light text-white/80 mb-4 italic">
-              "Més que un club"
-            </p>
-
-            {/* Descripción */}
-            <p className="text-lg text-white/70 mb-8 max-w-xl mx-auto lg:mx-0">
-              {clubInfo.cantera.descripcion.substring(0, 150)}...
-            </p>
-
-            {/* Botones */}
-            <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-              <a
-                href="#jugadores"
-                className="px-8 py-4 bg-gradient-to-r from-red-700 to-red-600 text-white font-semibold rounded-xl shadow-lg shadow-red-700/30 hover:shadow-xl hover:shadow-red-700/40 transform hover:-translate-y-1 transition-all duration-300"
+              <Typography
+                variant="h1"
+                sx={{
+                  fontSize: { xs: '3rem', lg: '4.5rem' },
+                  fontWeight: 800,
+                  color: 'white',
+                  mb: 3,
+                  lineHeight: 1.1,
+                }}
               >
-                Ver Plantilla
-              </a>
-              <a
-                href="#trofeos"
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-xl border border-white/20 hover:bg-white/20 transform hover:-translate-y-1 transition-all duration-300"
+                Fútbol Club{' '}
+                <Box
+                  component="span"
+                  sx={{
+                    background: 'linear-gradient(135deg, #fde047, #f59e0b)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
+                  Barcelona
+                </Box>
+              </Typography>
+
+              <Typography
+                variant="h4"
+                sx={{ color: alpha('#fff', 0.8), mb: 2, fontWeight: 300, fontStyle: 'italic' }}
               >
-                Ver Trofeos
-              </a>
-            </div>
-          </div>
+                "Més que un club"
+              </Typography>
 
-          {/* Lado derecho - Stats y escudo */}
-          <div className="relative">
-            {/* Círculo decorativo detrás */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 blur-2xl"></div>
-            </div>
+              <Typography
+                sx={{ color: alpha('#fff', 0.65), mb: 4, fontSize: '1.1rem', maxWidth: 540, mx: { xs: 'auto', lg: 0 } }}
+              >
+                {clubInfo.cantera.descripcion.substring(0, 150)}...
+              </Typography>
 
-            {/* Escudo simulado */}
-            <div className="relative flex justify-center mb-12">
-              <div className="w-48 h-48 lg:w-64 lg:h-64 rounded-full bg-gradient-to-br from-blue-600 via-red-700 to-yellow-500 p-1 shadow-2xl">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-blue-800 to-red-900 flex items-center justify-center">
-                  <div className="text-center">
-                    <span className="text-6xl lg:text-8xl font-bold text-white">FCB</span>
-                    <div className="flex justify-center gap-2 mt-2">
-                      <span className="text-yellow-400 text-2xl">★</span>
-                      <span className="text-yellow-400 text-2xl">★</span>
-                      <span className="text-yellow-400 text-2xl">★</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, justifyContent: { xs: 'center', lg: 'flex-start' } }}>
+                <Button
+                  variant="contained"
+                  href="#jugadores"
+                  size="large"
+                  sx={{
+                    background: 'linear-gradient(135deg, #b91c1c, #dc2626)',
+                    px: 4,
+                    py: 1.5,
+                    fontWeight: 600,
+                    borderRadius: 3,
+                    boxShadow: '0 8px 25px rgba(185, 28, 28, 0.3)',
+                    '&:hover': {
+                      background: 'linear-gradient(135deg, #dc2626, #ef4444)',
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0 12px 35px rgba(185, 28, 28, 0.4)',
+                    },
+                    transition: 'all 0.3s',
+                  }}
+                >
+                  Ver Plantilla
+                </Button>
+                <Button
+                  variant="outlined"
+                  href="#trofeos"
+                  size="large"
+                  sx={{
+                    px: 4,
+                    py: 1.5,
+                    fontWeight: 600,
+                    borderRadius: 3,
+                    color: 'white',
+                    borderColor: alpha('#fff', 0.3),
+                    backdropFilter: 'blur(10px)',
+                    '&:hover': {
+                      borderColor: alpha('#fff', 0.5),
+                      bgcolor: alpha('#fff', 0.1),
+                      transform: 'translateY(-2px)',
+                    },
+                    transition: 'all 0.3s',
+                  }}
+                >
+                  Ver Trofeos
+                </Button>
+              </Box>
+            </Box>
+          </Grid>
 
-            {/* Stats grid */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-all duration-300">
-                <Trophy className="w-8 h-8 text-yellow-400 mb-3" />
-                <p className="text-3xl font-bold text-white">{totalTrofeos}</p>
-                <p className="text-sm text-white/70">Títulos Oficiales</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-all duration-300">
-                <Users className="w-8 h-8 text-blue-400 mb-3" />
-                <p className="text-3xl font-bold text-white">{clubInfo.socios}</p>
-                <p className="text-sm text-white/70">Socios</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-all duration-300">
-                <Calendar className="w-8 h-8 text-red-400 mb-3" />
-                <p className="text-3xl font-bold text-white">125</p>
-                <p className="text-sm text-white/70">Años de Historia</p>
-              </div>
-              <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/10 hover:bg-white/15 transition-all duration-300">
-                <MapPin className="w-8 h-8 text-green-400 mb-3" />
-                <p className="text-3xl font-bold text-white">99k</p>
-                <p className="text-sm text-white/70">Capacidad Camp Nou</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          {/* Right - Shield & Stats */}
+          <Grid size={{ xs: 12, lg: 6 }}>
+            <Box sx={{ position: 'relative' }}>
+              {/* Glow behind shield */}
+              <Box
+                sx={{
+                  position: 'absolute', inset: 0,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                }}
+              >
+                <Box
+                  sx={{
+                    width: { xs: 280, lg: 380 },
+                    height: { xs: 280, lg: 380 },
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(251, 191, 36, 0.15), transparent 70%)',
+                    filter: 'blur(40px)',
+                  }}
+                />
+              </Box>
 
-      {/* Ola decorativa en la parte inferior */}
-      <div className="absolute bottom-0 left-0 right-0">
+              {/* Shield */}
+              <Box sx={{ display: 'flex', justifyContent: 'center', mb: 6, position: 'relative' }}>
+                <Box
+                  sx={{
+                    width: { xs: 180, lg: 240 },
+                    height: { xs: 180, lg: 240 },
+                    borderRadius: '50%',
+                    background: 'linear-gradient(135deg, #1565c0, #b71c1c, #f9a825)',
+                    p: '4px',
+                    boxShadow: '0 20px 60px rgba(0,0,0,0.4)',
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: '100%',
+                      height: '100%',
+                      borderRadius: '50%',
+                      background: 'linear-gradient(135deg, #1a3a6e, #6b1530)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      flexDirection: 'column',
+                    }}
+                  >
+                    <Typography sx={{ fontSize: { xs: '3.5rem', lg: '5rem' }, fontWeight: 800, color: 'white' }}>
+                      FCB
+                    </Typography>
+                    <Box sx={{ display: 'flex', gap: 0.5 }}>
+                      {[1, 2, 3].map((i) => (
+                        <Typography key={i} sx={{ color: '#fbbf24', fontSize: '1.5rem' }}>★</Typography>
+                      ))}
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
+
+              {/* Stats Grid */}
+              <Grid container spacing={2}>
+                {stats.map((stat, i) => (
+                  <Grid key={i} size={{ xs: 6 }}>
+                    <Paper
+                      elevation={0}
+                      sx={{
+                        p: 3,
+                        borderRadius: 4,
+                        bgcolor: alpha('#fff', 0.08),
+                        backdropFilter: 'blur(12px)',
+                        border: `1px solid ${alpha('#fff', 0.1)}`,
+                        transition: 'all 0.3s',
+                        '&:hover': { bgcolor: alpha('#fff', 0.12) },
+                      }}
+                    >
+                      {stat.icon}
+                      <Typography variant="h4" fontWeight={700} color="white" sx={{ mt: 1 }}>
+                        {stat.value}
+                      </Typography>
+                      <Typography variant="body2" sx={{ color: alpha('#fff', 0.6) }}>
+                        {stat.label}
+                      </Typography>
+                    </Paper>
+                  </Grid>
+                ))}
+              </Grid>
+            </Box>
+          </Grid>
+        </Grid>
+      </Box>
+
+      {/* Wave decoration */}
+      <Box sx={{ position: 'absolute', bottom: 0, left: 0, right: 0 }}>
         <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-            fill="rgba(15, 23, 42, 0.5)"
+            fill="rgba(10, 15, 26, 0.5)"
           />
         </svg>
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };

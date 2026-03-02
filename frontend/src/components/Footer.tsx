@@ -1,6 +1,23 @@
 import React from 'react';
 import { ClubInfo } from '../data/barcaData';
-import { Instagram, Twitter, Facebook, Youtube, Globe, Mail, MapPin, Phone } from 'lucide-react';
+import {
+  Box,
+  Typography,
+  Grid,
+  IconButton,
+  Link,
+  Divider,
+  Paper,
+  alpha,
+} from '@mui/material';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import XIcon from '@mui/icons-material/X';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import LanguageIcon from '@mui/icons-material/Language';
+import EmailIcon from '@mui/icons-material/Email';
+import PlaceIcon from '@mui/icons-material/Place';
+import PhoneIcon from '@mui/icons-material/Phone';
 
 interface FooterProps {
   clubInfo: ClubInfo;
@@ -9,167 +26,185 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ clubInfo }) => {
   const currentYear = new Date().getFullYear();
 
-  return (
-    <footer className="bg-slate-950 border-t border-slate-800">
-      {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-red-600 flex items-center justify-center">
-                <span className="text-white font-bold">FCB</span>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white">FC Barcelona</h3>
-                <p className="text-slate-400 text-sm">Més que un club</p>
-              </div>
-            </div>
-            <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-              {clubInfo.cantera.descripcion.substring(0, 120)}...
-            </p>
+  const socialLinks = [
+    { icon: <InstagramIcon />, color: '#E4405F' },
+    { icon: <XIcon />, color: '#1DA1F2' },
+    { icon: <FacebookIcon />, color: '#1877F2' },
+    { icon: <YouTubeIcon />, color: '#FF0000' },
+  ];
 
-            {/* Social Links */}
-            <div className="flex gap-3">
-              <a
-                href="#"
-                className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all duration-300"
-              >
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-400 hover:text-white transition-all duration-300"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-800 hover:text-white transition-all duration-300"
-              >
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 rounded-xl bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-red-600 hover:text-white transition-all duration-300"
-              >
-                <Youtube className="w-5 h-5" />
-              </a>
-            </div>
-          </div>
+  const quickLinks = [
+    { label: 'Plantilla', href: '#jugadores' },
+    { label: 'Estadísticas', href: '#estadisticas' },
+    { label: 'Palmarés', href: '#trofeos' },
+    { label: 'Historia', href: '#historia' },
+    { label: 'Noticias', href: '#' },
+    { label: 'Entradas', href: '#' },
+  ];
+
+  return (
+    <Box component="footer" sx={{ bgcolor: '#0a0f1a', borderTop: `1px solid ${alpha('#334155', 0.5)}` }}>
+      {/* Main Footer */}
+      <Box sx={{ maxWidth: 1280, mx: 'auto', px: { xs: 2, sm: 3, lg: 4 }, py: 8 }}>
+        <Grid container spacing={6}>
+          {/* Brand */}
+          <Grid size={{ xs: 12, md: 6, lg: 3 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, mb: 3 }}>
+              <Box sx={{ width: 48, height: 48, borderRadius: 3, background: 'linear-gradient(135deg, #1565c0, #c62828)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Typography variant="body2" fontWeight={700} color="white">FCB</Typography>
+              </Box>
+              <Box>
+                <Typography variant="h6" fontWeight={700}>FC Barcelona</Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>Més que un club</Typography>
+              </Box>
+            </Box>
+            <Typography variant="body2" sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.7 }}>
+              {clubInfo.cantera.descripcion.substring(0, 120)}...
+            </Typography>
+
+            {/* Social */}
+            <Box sx={{ display: 'flex', gap: 1 }}>
+              {socialLinks.map((social, i) => (
+                <IconButton
+                  key={i}
+                  size="small"
+                  sx={{
+                    bgcolor: alpha('#1e293b', 0.8),
+                    color: 'text.secondary',
+                    borderRadius: 3,
+                    width: 40,
+                    height: 40,
+                    transition: 'all 0.3s',
+                    '&:hover': {
+                      bgcolor: social.color,
+                      color: 'white',
+                    },
+                  }}
+                >
+                  {social.icon}
+                </IconButton>
+              ))}
+            </Box>
+          </Grid>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-bold mb-6">Enlaces Rápidos</h4>
-            <ul className="space-y-3">
-              <li>
-                <a href="#jugadores" className="text-slate-400 hover:text-blue-400 transition-colors text-sm">Plantilla</a>
-              </li>
-              <li>
-                <a href="#estadisticas" className="text-slate-400 hover:text-blue-400 transition-colors text-sm">Estadísticas</a>
-              </li>
-              <li>
-                <a href="#trofeos" className="text-slate-400 hover:text-blue-400 transition-colors text-sm">Palmarés</a>
-              </li>
-              <li>
-                <a href="#historia" className="text-slate-400 hover:text-blue-400 transition-colors text-sm">Historia</a>
-              </li>
-              <li>
-                <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors text-sm">Noticias</a>
-              </li>
-              <li>
-                <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors text-sm">Entradas</a>
-              </li>
-            </ul>
-          </div>
+          <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
+            <Typography variant="h6" fontWeight={700} sx={{ mb: 3 }}>Enlaces Rápidos</Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
+              {quickLinks.map((link, i) => (
+                <Link
+                  key={i}
+                  href={link.href}
+                  underline="none"
+                  sx={{
+                    color: 'text.secondary',
+                    fontSize: '0.875rem',
+                    transition: 'color 0.3s',
+                    '&:hover': { color: '#60a5fa' },
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </Box>
+          </Grid>
 
-          {/* Club Info */}
-          <div>
-            <h4 className="text-white font-bold mb-6">Información</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-slate-500 flex-shrink-0 mt-0.5" />
-                <span className="text-slate-400 text-sm">{clubInfo.estadio.direccion}</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-slate-500 flex-shrink-0" />
-                <span className="text-slate-400 text-sm">+34 902 189 900</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-slate-500 flex-shrink-0" />
-                <span className="text-slate-400 text-sm">oab@fcbarcelona.cat</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Globe className="w-5 h-5 text-slate-500 flex-shrink-0" />
-                <a href={clubInfo.web_oficial} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-blue-400 transition-colors text-sm">
-                  www.fcbarcelona.es
-                </a>
-              </li>
-            </ul>
-          </div>
+          {/* Contact */}
+          <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
+            <Typography variant="h6" fontWeight={700} sx={{ mb: 3 }}>Información</Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+              {[
+                { icon: <PlaceIcon sx={{ fontSize: 20, color: 'text.secondary', flexShrink: 0, mt: 0.25 }} />, text: clubInfo.estadio.direccion },
+                { icon: <PhoneIcon sx={{ fontSize: 20, color: 'text.secondary', flexShrink: 0 }} />, text: '+34 902 189 900' },
+                { icon: <EmailIcon sx={{ fontSize: 20, color: 'text.secondary', flexShrink: 0 }} />, text: 'oab@fcbarcelona.cat' },
+                {
+                  icon: <LanguageIcon sx={{ fontSize: 20, color: 'text.secondary', flexShrink: 0 }} />,
+                  text: (
+                    <Link href={clubInfo.web_oficial} target="_blank" rel="noopener noreferrer" underline="none" sx={{ color: 'text.secondary', '&:hover': { color: '#60a5fa' }, fontSize: '0.875rem' }}>
+                      www.fcbarcelona.es
+                    </Link>
+                  ),
+                },
+              ].map((item, i) => (
+                <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5 }}>
+                  {item.icon}
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>{item.text}</Typography>
+                </Box>
+              ))}
+            </Box>
+          </Grid>
 
           {/* Stats */}
-          <div>
-            <h4 className="text-white font-bold mb-6">El Club en Números</h4>
-            <div className="space-y-4">
-              <div className="p-4 bg-slate-800/50 rounded-xl">
-                <p className="text-2xl font-bold text-white">{clubInfo.socios}</p>
-                <p className="text-slate-400 text-sm">Socios</p>
-              </div>
-              <div className="p-4 bg-slate-800/50 rounded-xl">
-                <p className="text-2xl font-bold text-white">{clubInfo.trofeos.reduce((a, b) => a + b.cantidad, 0)}</p>
-                <p className="text-slate-400 text-sm">Títulos</p>
-              </div>
-              <div className="p-4 bg-slate-800/50 rounded-xl">
-                <p className="text-2xl font-bold text-white">{clubInfo.estadio.capacidad}</p>
-                <p className="text-slate-400 text-sm">Capacidad</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
+            <Typography variant="h6" fontWeight={700} sx={{ mb: 3 }}>El Club en Números</Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+              {[
+                { value: clubInfo.socios, label: 'Socios' },
+                { value: clubInfo.trofeos.reduce((a, b) => a + b.cantidad, 0), label: 'Títulos' },
+                { value: clubInfo.estadio.capacidad, label: 'Capacidad' },
+              ].map((stat, i) => (
+                <Paper
+                  key={i}
+                  elevation={0}
+                  sx={{ p: 2, bgcolor: alpha('#1e293b', 0.5), borderRadius: 3 }}
+                >
+                  <Typography variant="h5" fontWeight={700}>{stat.value}</Typography>
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>{stat.label}</Typography>
+                </Paper>
+              ))}
+            </Box>
+          </Grid>
+        </Grid>
 
-        {/* Patrocinadores */}
-        <div className="mt-16 pt-8 border-t border-slate-800">
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            <div className="text-center">
-              <p className="text-xs text-slate-500 mb-2">Patrocinador Principal</p>
-              <div className="px-6 py-3 bg-slate-800 rounded-xl">
-                <span className="text-white font-bold text-lg">Spotify</span>
-              </div>
-            </div>
-            <div className="text-center">
-              <p className="text-xs text-slate-500 mb-2">Equipación</p>
-              <div className="px-6 py-3 bg-slate-800 rounded-xl">
-                <span className="text-white font-bold text-lg">Nike</span>
-              </div>
-            </div>
-            {clubInfo.patrocinadores.otros.map((patrocinador, index) => (
-              <div key={index} className="text-center">
-                <p className="text-xs text-slate-500 mb-2">Patrocinador</p>
-                <div className="px-6 py-3 bg-slate-800 rounded-xl">
-                  <span className="text-slate-300 font-medium">{patrocinador}</span>
-                </div>
-              </div>
+        {/* Sponsors */}
+        <Box sx={{ mt: 8, pt: 4, borderTop: `1px solid ${alpha('#334155', 0.5)}` }}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 4 }}>
+            {[
+              { label: 'Patrocinador Principal', name: 'Spotify', bold: true },
+              { label: 'Equipación', name: 'Nike', bold: true },
+              ...clubInfo.patrocinadores.otros.map(p => ({ label: 'Patrocinador', name: p, bold: false })),
+            ].map((sponsor, i) => (
+              <Box key={i} sx={{ textAlign: 'center' }}>
+                <Typography variant="caption" sx={{ color: alpha('#fff', 0.3), display: 'block', mb: 0.5 }}>
+                  {sponsor.label}
+                </Typography>
+                <Paper elevation={0} sx={{ px: 3, py: 1.5, bgcolor: alpha('#1e293b', 0.8), borderRadius: 3 }}>
+                  <Typography sx={{ fontWeight: sponsor.bold ? 700 : 500, color: sponsor.bold ? 'white' : alpha('#fff', 0.7) }}>
+                    {sponsor.name}
+                  </Typography>
+                </Paper>
+              </Box>
             ))}
-          </div>
-        </div>
-      </div>
+          </Box>
+        </Box>
+      </Box>
 
       {/* Bottom Bar */}
-      <div className="border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-slate-500 text-sm text-center md:text-left">
-              © {currentYear} Fútbol Club Barcelona. Todos los derechos reservados.
-            </p>
-            <div className="flex gap-6">
-              <a href="#" className="text-slate-500 hover:text-white text-sm transition-colors">Política de Privacidad</a>
-              <a href="#" className="text-slate-500 hover:text-white text-sm transition-colors">Términos de Uso</a>
-              <a href="#" className="text-slate-500 hover:text-white text-sm transition-colors">Cookies</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
+      <Divider sx={{ borderColor: alpha('#334155', 0.5) }} />
+      <Box sx={{ maxWidth: 1280, mx: 'auto', px: { xs: 2, sm: 3, lg: 4 }, py: 3 }}>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', justifyContent: 'space-between', gap: 2 }}>
+          <Typography variant="body2" sx={{ color: alpha('#fff', 0.3), textAlign: { xs: 'center', md: 'left' } }}>
+            © {currentYear} Fútbol Club Barcelona. Todos los derechos reservados.
+          </Typography>
+          <Box sx={{ display: 'flex', gap: 3 }}>
+            {['Política de Privacidad', 'Términos de Uso', 'Cookies'].map((text, i) => (
+              <Link
+                key={i}
+                href="#"
+                underline="none"
+                sx={{
+                  color: alpha('#fff', 0.3),
+                  fontSize: '0.875rem',
+                  transition: 'color 0.3s',
+                  '&:hover': { color: 'white' },
+                }}
+              >
+                {text}
+              </Link>
+            ))}
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };

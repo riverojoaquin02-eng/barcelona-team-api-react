@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 import { Trofeo } from '../data/barcaData';
-import { Trophy, Calendar, ChevronDown, ChevronUp } from 'lucide-react';
+import {
+  Box,
+  Typography,
+  Grid,
+  Paper,
+  Chip,
+  Collapse,
+  alpha,
+} from '@mui/material';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 
 interface TrofeosSectionProps {
   trofeos: Trofeo[];
@@ -8,168 +20,215 @@ interface TrofeosSectionProps {
 
 export const TrofeosSection: React.FC<TrofeosSectionProps> = ({ trofeos }) => {
   const [expandedId, setExpandedId] = useState<number | null>(null);
-
-  // Ordenar por cantidad de trofeos
   const trofeosOrdenados = [...trofeos].sort((a, b) => b.cantidad - a.cantidad);
   const totalTrofeos = trofeos.reduce((acc, t) => acc + t.cantidad, 0);
 
   return (
-    <section id="trofeos" className="py-20 bg-slate-900 relative overflow-hidden">
-      {/* Fondo decorativo */}
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-red-500/5 rounded-full blur-3xl"></div>
-      </div>
+    <Box
+      component="section"
+      id="trofeos"
+      sx={{ py: { xs: 8, md: 10 }, bgcolor: '#0f172a', position: 'relative', overflow: 'hidden' }}
+    >
+      {/* Background decorations */}
+      <Box sx={{ position: 'absolute', top: 0, left: '25%', width: 384, height: 384, bgcolor: alpha('#eab308', 0.04), borderRadius: '50%', filter: 'blur(80px)' }} />
+      <Box sx={{ position: 'absolute', bottom: 0, right: '25%', width: 384, height: 384, bgcolor: alpha('#ef4444', 0.04), borderRadius: '50%', filter: 'blur(80px)' }} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <Box sx={{ maxWidth: 1280, mx: 'auto', px: { xs: 2, sm: 3, lg: 4 }, position: 'relative', zIndex: 1 }}>
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-yellow-600/20 text-yellow-400 text-sm font-semibold mb-4">
-            Palmarés Histórico
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Sala de <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-600">Trofeos</span>
-          </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto mb-8">
+        <Box sx={{ textAlign: 'center', mb: 8 }}>
+          <Chip label="Palmarés Histórico" sx={{ mb: 2, bgcolor: alpha('#ca8a04', 0.15), color: '#fbbf24', fontWeight: 600 }} />
+          <Typography variant="h2" sx={{ mb: 2, fontSize: { xs: '2rem', lg: '2.75rem' } }}>
+            Sala de{' '}
+            <Box component="span" sx={{ background: 'linear-gradient(135deg, #fbbf24, #ca8a04)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Trofeos
+            </Box>
+          </Typography>
+          <Typography sx={{ color: 'text.secondary', maxWidth: 600, mx: 'auto', mb: 4 }}>
             El Barcelona es uno de los clubes más laureados del mundo. Un legado de éxitos que se construye día a día.
-          </p>
+          </Typography>
 
-          {/* Total de trofeos */}
-          <div className="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-yellow-600/20 to-yellow-500/20 rounded-2xl border border-yellow-500/30">
-            <Trophy className="w-10 h-10 text-yellow-400" />
-            <div className="text-left">
-              <p className="text-4xl font-bold text-white">{totalTrofeos}</p>
-              <p className="text-yellow-400 text-sm">Títulos Oficiales</p>
-            </div>
-          </div>
-        </div>
+          {/* Total trophies badge */}
+          <Paper
+            elevation={0}
+            sx={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 2,
+              px: 4,
+              py: 2,
+              borderRadius: 4,
+              background: `linear-gradient(135deg, ${alpha('#ca8a04', 0.15)}, ${alpha('#eab308', 0.15)})`,
+              border: `1px solid ${alpha('#eab308', 0.3)}`,
+            }}
+          >
+            <EmojiEventsIcon sx={{ fontSize: 40, color: '#fbbf24' }} />
+            <Box sx={{ textAlign: 'left' }}>
+              <Typography variant="h3" fontWeight={800}>{totalTrofeos}</Typography>
+              <Typography variant="body2" sx={{ color: '#fbbf24' }}>Títulos Oficiales</Typography>
+            </Box>
+          </Paper>
+        </Box>
 
-        {/* Grid de trofeos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {trofeosOrdenados.map((trofeo, index) => (
-            <div
-              key={trofeo.id}
-              className={`group relative bg-slate-800/50 backdrop-blur-sm rounded-3xl overflow-hidden border transition-all duration-500 cursor-pointer ${expandedId === trofeo.id
-                  ? 'border-yellow-500/50 shadow-xl shadow-yellow-500/10'
-                  : 'border-slate-700 hover:border-yellow-500/30'
-                }`}
-              onClick={() => setExpandedId(expandedId === trofeo.id ? null : trofeo.id)}
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {/* Efecto de brillo */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        {/* Trophy Grid */}
+        <Grid container spacing={3}>
+          {trofeosOrdenados.map((trofeo) => (
+            <Grid key={trofeo.id} size={{ xs: 12, md: 6, lg: 4 }}>
+              <Paper
+                elevation={0}
+                onClick={() => setExpandedId(expandedId === trofeo.id ? null : trofeo.id)}
+                sx={{
+                  p: 3,
+                  borderRadius: 6,
+                  bgcolor: alpha('#1e293b', 0.5),
+                  border: `1px solid ${expandedId === trofeo.id ? alpha('#eab308', 0.5) : alpha('#334155', 0.5)}`,
+                  cursor: 'pointer',
+                  transition: 'all 0.4s ease',
+                  '&:hover': {
+                    borderColor: alpha('#eab308', 0.3),
+                    '& .trophy-icon': { transform: 'scale(1.1)' },
+                    '& .trophy-name': { color: '#fbbf24' },
+                  },
+                  ...(expandedId === trofeo.id && {
+                    boxShadow: `0 10px 30px ${alpha('#eab308', 0.1)}`,
+                  }),
+                }}
+              >
+                {/* Icon & Count */}
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 2 }}>
+                  <Box
+                    className="trophy-icon"
+                    sx={{
+                      width: 64,
+                      height: 64,
+                      borderRadius: 4,
+                      background: 'linear-gradient(135deg, #eab308, #ca8a04)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: `0 8px 20px ${alpha('#eab308', 0.2)}`,
+                      transition: 'transform 0.3s',
+                      fontSize: '1.75rem',
+                    }}
+                  >
+                    {trofeo.imagen}
+                  </Box>
+                  <Box sx={{ textAlign: 'right' }}>
+                    <Typography variant="h2" fontWeight={800}>{trofeo.cantidad}</Typography>
+                    <Typography variant="body2" sx={{ color: '#fbbf24' }}>títulos</Typography>
+                  </Box>
+                </Box>
 
-              <div className="p-6">
-                {/* Icono y número */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center shadow-lg shadow-yellow-500/20 group-hover:scale-110 transition-transform duration-300">
-                    <span className="text-3xl">{trofeo.imagen}</span>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-5xl font-bold text-white">{trofeo.cantidad}</p>
-                    <p className="text-yellow-400 text-sm">títulos</p>
-                  </div>
-                </div>
-
-                {/* Nombre y descripción */}
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors">
+                {/* Name & Description */}
+                <Typography
+                  className="trophy-name"
+                  variant="h5"
+                  fontWeight={700}
+                  sx={{ mb: 1, transition: 'color 0.3s' }}
+                >
                   {trofeo.nombre}
-                </h3>
-                <p className="text-slate-400 text-sm mb-4 line-clamp-2">
+                </Typography>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: 'text.secondary',
+                    mb: 2,
+                    display: '-webkit-box',
+                    WebkitLineClamp: 2,
+                    WebkitBoxOrient: 'vertical',
+                    overflow: 'hidden',
+                  }}
+                >
                   {trofeo.descripcion}
-                </p>
+                </Typography>
 
-                {/* Último ganado */}
-                <div className="flex items-center gap-2 text-sm mb-4">
-                  <Calendar className="w-4 h-4 text-slate-500" />
-                  <span className="text-slate-400">Último: </span>
-                  <span className="text-yellow-400 font-medium">{trofeo.ultimo_ganado}</span>
-                </div>
+                {/* Last won */}
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2 }}>
+                  <CalendarMonthIcon sx={{ fontSize: 16, color: 'text.secondary' }} />
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                    Último:{' '}
+                    <Box component="span" sx={{ color: '#fbbf24', fontWeight: 500 }}>
+                      {trofeo.ultimo_ganado}
+                    </Box>
+                  </Typography>
+                </Box>
 
-                {/* Expandible */}
-                <div className={`overflow-hidden transition-all duration-500 ${expandedId === trofeo.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="pt-4 border-t border-slate-700">
-                    <p className="text-sm text-slate-400 mb-3">Años ganados:</p>
-                    <div className="flex flex-wrap gap-2 max-h-32 overflow-y-auto">
+                {/* Expandable years */}
+                <Collapse in={expandedId === trofeo.id}>
+                  <Box sx={{ pt: 2, borderTop: `1px solid ${alpha('#334155', 0.5)}` }}>
+                    <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1.5 }}>Años ganados:</Typography>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.75, maxHeight: 128, overflow: 'auto' }}>
                       {trofeo.anios_ganados.map((anio) => (
-                        <span
+                        <Chip
                           key={anio}
-                          className="px-2 py-1 bg-yellow-500/10 text-yellow-400 rounded-lg text-xs font-medium"
-                        >
-                          {anio}
-                        </span>
+                          label={anio}
+                          size="small"
+                          sx={{
+                            bgcolor: alpha('#eab308', 0.1),
+                            color: '#fbbf24',
+                            fontSize: '0.75rem',
+                            fontWeight: 500,
+                          }}
+                        />
                       ))}
-                    </div>
-                  </div>
-                </div>
+                    </Box>
+                  </Box>
+                </Collapse>
 
-                {/* Botón expandir */}
-                <button className="w-full mt-4 flex items-center justify-center gap-2 py-2 text-slate-400 hover:text-white transition-colors">
-                  {expandedId === trofeo.id ? (
-                    <>
-                      <span className="text-sm">Ver menos</span>
-                      <ChevronUp className="w-4 h-4" />
-                    </>
-                  ) : (
-                    <>
-                      <span className="text-sm">Ver todos los años</span>
-                      <ChevronDown className="w-4 h-4" />
-                    </>
-                  )}
-                </button>
-              </div>
-            </div>
+                {/* Expand button */}
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: 1,
+                    mt: 2,
+                    color: 'text.secondary',
+                    '&:hover': { color: 'white' },
+                    transition: 'color 0.3s',
+                  }}
+                >
+                  <Typography variant="body2">
+                    {expandedId === trofeo.id ? 'Ver menos' : 'Ver todos los años'}
+                  </Typography>
+                  {expandedId === trofeo.id ? <ExpandLessIcon sx={{ fontSize: 18 }} /> : <ExpandMoreIcon sx={{ fontSize: 18 }} />}
+                </Box>
+              </Paper>
+            </Grid>
           ))}
-        </div>
+        </Grid>
 
-        {/* Sección de éxitos destacados */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-gradient-to-br from-blue-900/30 to-slate-800/30 rounded-2xl p-6 border border-blue-500/20">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-xl bg-blue-600 flex items-center justify-center">
-                <Trophy className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-white">5</p>
-                <p className="text-blue-400 text-sm">Champions League</p>
-              </div>
-            </div>
-            <p className="text-slate-400 text-sm">
-              Última conquista en 2015 con la MSN. Uno de los clubes más exitosos de la competición.
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-red-900/30 to-slate-800/30 rounded-2xl p-6 border border-red-500/20">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-xl bg-red-600 flex items-center justify-center">
-                <Trophy className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-white">27</p>
-                <p className="text-red-400 text-sm">Ligas Españolas</p>
-              </div>
-            </div>
-            <p className="text-slate-400 text-sm">
-              El club ganó la primera edición de la Liga en 1929 y es uno de los más laureados.
-            </p>
-          </div>
-
-          <div className="bg-gradient-to-br from-yellow-900/30 to-slate-800/30 rounded-2xl p-6 border border-yellow-500/20">
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-12 h-12 rounded-xl bg-yellow-600 flex items-center justify-center">
-                <Trophy className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <p className="text-3xl font-bold text-white">31</p>
-                <p className="text-yellow-400 text-sm">Copas del Rey</p>
-              </div>
-            </div>
-            <p className="text-slate-400 text-sm">
-              Récord absoluto de la competición. Máximo ganador histórico de la Copa de Su Majestad.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+        {/* Highlighted achievements */}
+        <Grid container spacing={3} sx={{ mt: 8 }}>
+          {[
+            { count: 5, label: 'Champions League', desc: 'Última conquista en 2015 con la MSN. Uno de los clubes más exitosos de la competición.', color: '#3b82f6', bgColor: alpha('#1e3a6e', 0.3) },
+            { count: 27, label: 'Ligas Españolas', desc: 'El club ganó la primera edición de la Liga en 1929 y es uno de los más laureados.', color: '#ef4444', bgColor: alpha('#6b1520', 0.3) },
+            { count: 31, label: 'Copas del Rey', desc: 'Récord absoluto de la competición. Máximo ganador histórico de la Copa de Su Majestad.', color: '#eab308', bgColor: alpha('#5a3e0a', 0.3) },
+          ].map((item, i) => (
+            <Grid key={i} size={{ xs: 12, md: 4 }}>
+              <Paper
+                elevation={0}
+                sx={{
+                  p: 3,
+                  borderRadius: 4,
+                  background: `linear-gradient(135deg, ${item.bgColor}, ${alpha('#1e293b', 0.3)})`,
+                  border: `1px solid ${alpha(item.color, 0.2)}`,
+                }}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
+                  <Box sx={{ width: 48, height: 48, borderRadius: 3, bgcolor: item.color, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <EmojiEventsIcon sx={{ color: 'white' }} />
+                  </Box>
+                  <Box>
+                    <Typography variant="h4" fontWeight={800}>{item.count}</Typography>
+                    <Typography variant="body2" sx={{ color: item.color }}>{item.label}</Typography>
+                  </Box>
+                </Box>
+                <Typography variant="body2" sx={{ color: 'text.secondary' }}>{item.desc}</Typography>
+              </Paper>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </Box>
   );
 };

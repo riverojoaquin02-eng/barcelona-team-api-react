@@ -1,194 +1,249 @@
 import React from 'react';
 import { Estadio, Entrenador } from '../data/barcaData';
-import { MapPin, Users, Calendar, Ruler, Building2, Briefcase, Award, History, Target } from 'lucide-react';
+import {
+  Box,
+  Typography,
+  Grid,
+  Paper,
+  Chip,
+  alpha,
+} from '@mui/material';
+import PlaceIcon from '@mui/icons-material/Place';
+import GroupsIcon from '@mui/icons-material/Groups';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import StraightenIcon from '@mui/icons-material/Straighten';
+import ApartmentIcon from '@mui/icons-material/Apartment';
+import WorkIcon from '@mui/icons-material/Work';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import HistoryIcon from '@mui/icons-material/History';
+import GpsFixedIcon from '@mui/icons-material/GpsFixed';
 
 interface EstadioEntrenadorSectionProps {
   estadio: Estadio;
   entrenador: Entrenador;
 }
 
-export const EstadioEntrenadorSection: React.FC<EstadioEntrenadorSectionProps> = ({ estadio, entrenador }) => {
-  return (
-    <section className="py-20 bg-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-green-600/20 text-green-400 text-sm font-semibold mb-4">
-            Institución
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Estadio y <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">Cuerpo Técnico</span>
-          </h2>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Sección Estadio */}
-          <div className="bg-gradient-to-br from-blue-900/20 to-slate-800/50 rounded-3xl p-8 border border-blue-500/20">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center shadow-lg shadow-blue-600/30">
-                <Building2 className="w-8 h-8 text-white" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white">{estadio.nombre}</h3>
-                <p className="text-blue-400">Nuestra casa</p>
-              </div>
-            </div>
-
-            <p className="text-slate-300 mb-6 leading-relaxed">
-              {estadio.historia}
-            </p>
-
-            {/* Stats del estadio */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                <Users className="w-5 h-5 text-blue-400" />
-                <div>
-                  <p className="text-sm text-slate-400">Capacidad</p>
-                  <p className="font-semibold text-white">{estadio.capacidad}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                <Calendar className="w-5 h-5 text-green-400" />
-                <div>
-                  <p className="text-sm text-slate-400">Inauguración</p>
-                  <p className="font-semibold text-white">{estadio.inauguracion}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                <Ruler className="w-5 h-5 text-yellow-400" />
-                <div>
-                  <p className="text-sm text-slate-400">Dimensiones</p>
-                  <p className="font-semibold text-white">{estadio.dimensiones}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                <MapPin className="w-5 h-5 text-red-400" />
-                <div>
-                  <p className="text-sm text-slate-400">Ubicación</p>
-                  <p className="font-semibold text-white text-sm">Barcelona, España</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Reformas */}
-            <div>
-              <h4 className="text-lg font-bold text-white mb-3">Reformas Históricas</h4>
-              <div className="space-y-2">
-                {estadio.reformas.map((reforma, index) => (
-                  <div key={index} className="flex items-start gap-3 p-3 bg-slate-800/30 rounded-lg">
-                    <div className="w-2 h-2 rounded-full bg-blue-400 mt-2 flex-shrink-0"></div>
-                    <p className="text-slate-400 text-sm">{reforma}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Records */}
-            <div className="mt-6 p-4 bg-gradient-to-r from-blue-600/10 to-purple-600/10 rounded-xl border border-blue-500/20">
-              <h4 className="text-lg font-bold text-white mb-2">Récords del Estadio</h4>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-slate-400">Asistencia récord:</span>
-                  <span className="text-white font-medium">{estadio.records.asistencia_record}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-400">Fecha:</span>
-                  <span className="text-white font-medium">{estadio.records.fecha_record}</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-slate-400">Partidos disputados:</span>
-                  <span className="text-white font-medium">{estadio.records.partidos_jugados}+</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Sección Entrenador */}
-          <div className="bg-gradient-to-br from-red-900/20 to-slate-800/50 rounded-3xl p-8 border border-red-500/20">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-600 to-red-700 flex items-center justify-center shadow-lg shadow-red-600/30">
-                <Briefcase className="w-8 h-8 text-white" />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white">{entrenador.nombre}</h3>
-                <p className="text-red-400">Entrenador Principal</p>
-              </div>
-            </div>
-
-            {/* Info rápida */}
-            <div className="grid grid-cols-3 gap-4 mb-6">
-              <div className="text-center p-4 bg-slate-800/50 rounded-xl">
-                <p className="text-2xl font-bold text-white">{entrenador.edad}</p>
-                <p className="text-xs text-slate-400">Años</p>
-              </div>
-              <div className="text-center p-4 bg-slate-800/50 rounded-xl">
-                <p className="text-2xl font-bold text-red-400">{entrenador.titulos_ganados}</p>
-                <p className="text-xs text-slate-400">Títulos</p>
-              </div>
-              <div className="text-center p-4 bg-slate-800/50 rounded-xl">
-                <Flag className="w-6 h-6 mx-auto text-blue-400 mb-1" country={entrenador.nacionalidad} />
-                <p className="text-xs text-slate-400">{entrenador.nacionalidad}</p>
-              </div>
-            </div>
-
-            <p className="text-slate-300 mb-6 leading-relaxed">
-              {entrenador.biografia}
-            </p>
-
-            {/* Formación preferida */}
-            <div className="mb-6">
-              <div className="flex items-center gap-2 mb-3">
-                <Target className="w-5 h-5 text-yellow-400" />
-                <h4 className="text-lg font-bold text-white">Formación Preferida</h4>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {entrenador.formacion_preferida.split(' / ').map((formacion, index) => (
-                  <span key={index} className="px-4 py-2 bg-yellow-500/10 text-yellow-400 rounded-lg font-mono">
-                    {formacion}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Carrera */}
-            <div className="mb-6">
-              <div className="flex items-center gap-2 mb-3">
-                <History className="w-5 h-5 text-blue-400" />
-                <h4 className="text-lg font-bold text-white">Trayectoria</h4>
-              </div>
-              <div className="space-y-2">
-                {entrenador.carrera.map((etapa, index) => (
-                  <div key={index} className="flex items-center gap-3 p-3 bg-slate-800/30 rounded-lg">
-                    <div className="w-2 h-2 rounded-full bg-red-400 flex-shrink-0"></div>
-                    <p className="text-slate-400 text-sm">{etapa}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Desde cuándo */}
-            <div className="mt-6 p-4 bg-gradient-to-r from-red-600/10 to-orange-600/10 rounded-xl border border-red-500/20">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-slate-400">Dirigiendo al Barcelona desde</p>
-                  <p className="text-xl font-bold text-white">{entrenador.desde}</p>
-                </div>
-                <Award className="w-10 h-10 text-red-400" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Componente helper para la bandera (simulado)
-const Flag = ({ country, className }: { country: string; className?: string }) => {
+const FlagEmoji = ({ country }: { country: string }) => {
   const flags: Record<string, string> = {
     'Alemana': '🇩🇪',
     'Española': '🇪🇸',
-    'default': '⚽'
+    'default': '⚽',
   };
-  return <span className={className}>{flags[country] || flags.default}</span>;
+  return <span style={{ fontSize: '1.5rem' }}>{flags[country] || flags.default}</span>;
+};
+
+export const EstadioEntrenadorSection: React.FC<EstadioEntrenadorSectionProps> = ({ estadio, entrenador }) => {
+  return (
+    <Box component="section" sx={{ py: { xs: 8, md: 10 }, bgcolor: '#0f172a' }}>
+      <Box sx={{ maxWidth: 1280, mx: 'auto', px: { xs: 2, sm: 3, lg: 4 } }}>
+        {/* Header */}
+        <Box sx={{ textAlign: 'center', mb: 8 }}>
+          <Chip label="Institución" sx={{ mb: 2, bgcolor: alpha('#16a34a', 0.15), color: '#4ade80', fontWeight: 600 }} />
+          <Typography variant="h2" sx={{ mb: 2, fontSize: { xs: '2rem', lg: '2.75rem' } }}>
+            Estadio y{' '}
+            <Box component="span" sx={{ background: 'linear-gradient(135deg, #4ade80, #3b82f6)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Cuerpo Técnico
+            </Box>
+          </Typography>
+        </Box>
+
+        <Grid container spacing={4}>
+          {/* Stadium */}
+          <Grid size={{ xs: 12, lg: 6 }}>
+            <Paper
+              elevation={0}
+              sx={{
+                p: 4,
+                borderRadius: 6,
+                background: `linear-gradient(135deg, ${alpha('#1e3a6e', 0.2)}, ${alpha('#1e293b', 0.5)})`,
+                border: `1px solid ${alpha('#3b82f6', 0.2)}`,
+                height: '100%',
+              }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+                <Box sx={{ width: 64, height: 64, borderRadius: 4, background: 'linear-gradient(135deg, #1565c0, #1976d2)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: `0 8px 20px ${alpha('#1565c0', 0.3)}` }}>
+                  <ApartmentIcon sx={{ fontSize: 32, color: 'white' }} />
+                </Box>
+                <Box>
+                  <Typography variant="h5" fontWeight={700}>{estadio.nombre}</Typography>
+                  <Typography variant="body2" sx={{ color: '#60a5fa' }}>Nuestra casa</Typography>
+                </Box>
+              </Box>
+
+              <Typography sx={{ color: alpha('#fff', 0.7), mb: 3, lineHeight: 1.8 }}>
+                {estadio.historia}
+              </Typography>
+
+              {/* Stadium Stats */}
+              <Grid container spacing={2} sx={{ mb: 3 }}>
+                {[
+                  { icon: <GroupsIcon sx={{ color: '#60a5fa' }} />, label: 'Capacidad', value: estadio.capacidad },
+                  { icon: <CalendarMonthIcon sx={{ color: '#4ade80' }} />, label: 'Inauguración', value: estadio.inauguracion },
+                  { icon: <StraightenIcon sx={{ color: '#fbbf24' }} />, label: 'Dimensiones', value: estadio.dimensiones },
+                  { icon: <PlaceIcon sx={{ color: '#f87171' }} />, label: 'Ubicación', value: 'Barcelona, España' },
+                ].map((stat, i) => (
+                  <Grid key={i} size={6}>
+                    <Paper
+                      elevation={0}
+                      sx={{ display: 'flex', alignItems: 'center', gap: 1.5, p: 2, bgcolor: alpha('#1e293b', 0.5), borderRadius: 3 }}
+                    >
+                      {stat.icon}
+                      <Box>
+                        <Typography variant="caption" sx={{ color: 'text.secondary' }}>{stat.label}</Typography>
+                        <Typography variant="body2" fontWeight={600}>{stat.value}</Typography>
+                      </Box>
+                    </Paper>
+                  </Grid>
+                ))}
+              </Grid>
+
+              {/* Reforms */}
+              <Box sx={{ mb: 3 }}>
+                <Typography variant="h6" fontWeight={700} sx={{ mb: 1.5 }}>Reformas Históricas</Typography>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                  {estadio.reformas.map((reforma, index) => (
+                    <Box key={index} sx={{ display: 'flex', alignItems: 'flex-start', gap: 1.5, p: 1.5, bgcolor: alpha('#1e293b', 0.3), borderRadius: 2 }}>
+                      <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: '#60a5fa', mt: 1, flexShrink: 0 }} />
+                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>{reforma}</Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
+
+              {/* Records */}
+              <Paper
+                elevation={0}
+                sx={{
+                  p: 2,
+                  borderRadius: 3,
+                  background: `linear-gradient(135deg, ${alpha('#1565c0', 0.1)}, ${alpha('#7c3aed', 0.1)})`,
+                  border: `1px solid ${alpha('#3b82f6', 0.2)}`,
+                }}
+              >
+                <Typography variant="h6" fontWeight={700} sx={{ mb: 1 }}>Récords del Estadio</Typography>
+                {[
+                  { label: 'Asistencia récord:', value: estadio.records.asistencia_record },
+                  { label: 'Fecha:', value: estadio.records.fecha_record },
+                  { label: 'Partidos disputados:', value: `${estadio.records.partidos_jugados}+` },
+                ].map((r, i) => (
+                  <Box key={i} sx={{ display: 'flex', justifyContent: 'space-between', py: 0.5 }}>
+                    <Typography variant="body2" sx={{ color: 'text.secondary' }}>{r.label}</Typography>
+                    <Typography variant="body2" fontWeight={500}>{r.value}</Typography>
+                  </Box>
+                ))}
+              </Paper>
+            </Paper>
+          </Grid>
+
+          {/* Coach */}
+          <Grid size={{ xs: 12, lg: 6 }}>
+            <Paper
+              elevation={0}
+              sx={{
+                p: 4,
+                borderRadius: 6,
+                background: `linear-gradient(135deg, ${alpha('#6b1530', 0.2)}, ${alpha('#1e293b', 0.5)})`,
+                border: `1px solid ${alpha('#ef4444', 0.2)}`,
+                height: '100%',
+              }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+                <Box sx={{ width: 64, height: 64, borderRadius: 4, background: 'linear-gradient(135deg, #dc2626, #b91c1c)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: `0 8px 20px ${alpha('#dc2626', 0.3)}` }}>
+                  <WorkIcon sx={{ fontSize: 32, color: 'white' }} />
+                </Box>
+                <Box>
+                  <Typography variant="h5" fontWeight={700}>{entrenador.nombre}</Typography>
+                  <Typography variant="body2" sx={{ color: '#f87171' }}>Entrenador Principal</Typography>
+                </Box>
+              </Box>
+
+              {/* Quick Info */}
+              <Grid container spacing={2} sx={{ mb: 3 }}>
+                <Grid size={4}>
+                  <Paper elevation={0} sx={{ textAlign: 'center', p: 2, bgcolor: alpha('#1e293b', 0.5), borderRadius: 3 }}>
+                    <Typography variant="h5" fontWeight={700}>{entrenador.edad}</Typography>
+                    <Typography variant="caption" sx={{ color: 'text.secondary' }}>Años</Typography>
+                  </Paper>
+                </Grid>
+                <Grid size={4}>
+                  <Paper elevation={0} sx={{ textAlign: 'center', p: 2, bgcolor: alpha('#1e293b', 0.5), borderRadius: 3 }}>
+                    <Typography variant="h5" fontWeight={700} sx={{ color: '#f87171' }}>{entrenador.titulos_ganados}</Typography>
+                    <Typography variant="caption" sx={{ color: 'text.secondary' }}>Títulos</Typography>
+                  </Paper>
+                </Grid>
+                <Grid size={4}>
+                  <Paper elevation={0} sx={{ textAlign: 'center', p: 2, bgcolor: alpha('#1e293b', 0.5), borderRadius: 3 }}>
+                    <FlagEmoji country={entrenador.nacionalidad} />
+                    <Typography variant="caption" sx={{ color: 'text.secondary', display: 'block' }}>{entrenador.nacionalidad}</Typography>
+                  </Paper>
+                </Grid>
+              </Grid>
+
+              <Typography sx={{ color: alpha('#fff', 0.7), mb: 3, lineHeight: 1.8 }}>
+                {entrenador.biografia}
+              </Typography>
+
+              {/* Preferred Formation */}
+              <Box sx={{ mb: 3 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                  <GpsFixedIcon sx={{ color: '#fbbf24' }} />
+                  <Typography variant="h6" fontWeight={700}>Formación Preferida</Typography>
+                </Box>
+                <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                  {entrenador.formacion_preferida.split(' / ').map((formacion, index) => (
+                    <Chip
+                      key={index}
+                      label={formacion}
+                      sx={{
+                        bgcolor: alpha('#eab308', 0.1),
+                        color: '#fbbf24',
+                        fontFamily: 'monospace',
+                        fontWeight: 500,
+                      }}
+                    />
+                  ))}
+                </Box>
+              </Box>
+
+              {/* Career */}
+              <Box sx={{ mb: 3 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                  <HistoryIcon sx={{ color: '#60a5fa' }} />
+                  <Typography variant="h6" fontWeight={700}>Trayectoria</Typography>
+                </Box>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                  {entrenador.carrera.map((etapa, index) => (
+                    <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1.5, p: 1.5, bgcolor: alpha('#1e293b', 0.3), borderRadius: 2 }}>
+                      <Box sx={{ width: 8, height: 8, borderRadius: '50%', bgcolor: '#f87171', flexShrink: 0 }} />
+                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>{etapa}</Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
+
+              {/* Since when */}
+              <Paper
+                elevation={0}
+                sx={{
+                  p: 2,
+                  borderRadius: 3,
+                  background: `linear-gradient(135deg, ${alpha('#dc2626', 0.1)}, ${alpha('#ea580c', 0.1)})`,
+                  border: `1px solid ${alpha('#ef4444', 0.2)}`,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <Box>
+                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>Dirigiendo al Barcelona desde</Typography>
+                  <Typography variant="h5" fontWeight={700}>{entrenador.desde}</Typography>
+                </Box>
+                <EmojiEventsIcon sx={{ fontSize: 40, color: '#f87171' }} />
+              </Paper>
+            </Paper>
+          </Grid>
+        </Grid>
+      </Box>
+    </Box>
+  );
 };

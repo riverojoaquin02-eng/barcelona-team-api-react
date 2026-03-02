@@ -1,3 +1,4 @@
+import { Box, Typography, CircularProgress } from '@mui/material';
 import { useClubInfo, useJugadores, useTrofeos, useEstadisticas, useEstadio, useEntrenador, useHistoria } from './hooks/useBarcaData';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -11,7 +12,6 @@ import { Footer } from './components/Footer';
 import { Loading } from './components/ui/Loading';
 
 export function App() {
-  // Consumiendo datos de la "API" (datos estáticos simulando FastAPI)
   const { data: clubInfo, loading: loadingClub } = useClubInfo();
   const { data: jugadores, loading: loadingJugadores } = useJugadores();
   const { data: trofeos, loading: loadingTrofeos } = useTrofeos();
@@ -20,57 +20,39 @@ export function App() {
   const { data: entrenador, loading: loadingEntrenador } = useEntrenador();
   const { data: historia, loading: loadingHistoria } = useHistoria();
 
-  // Verificar si está cargando
   const isLoading = loadingClub || loadingJugadores || loadingTrofeos ||
     loadingEstadisticas || loadingEstadio || loadingEntrenador || loadingHistoria;
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
+      <Box sx={{ minHeight: '100vh', bgcolor: '#0a0f1a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <Loading />
-      </div>
+      </Box>
     );
   }
 
   if (!clubInfo || !jugadores.length || !trofeos.length || !estadisticas || !estadio || !entrenador || !historia) {
     return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-        <div className="text-center">
-          <p className="text-white text-xl">Error al cargar los datos del club</p>
-          <p className="text-slate-400 mt-2">Por favor, intenta recargar la página</p>
-        </div>
-      </div>
+      <Box sx={{ minHeight: '100vh', bgcolor: '#0a0f1a', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Box sx={{ textAlign: 'center' }}>
+          <Typography variant="h5" color="white" sx={{ mb: 1 }}>Error al cargar los datos del club</Typography>
+          <Typography sx={{ color: 'text.secondary' }}>Por favor, intenta recargar la página</Typography>
+        </Box>
+      </Box>
     );
   }
 
   return (
-    <div id="inicio" className="min-h-screen bg-slate-950">
-      {/* Navegación */}
+    <Box id="inicio" sx={{ minHeight: '100vh', bgcolor: '#0a0f1a' }}>
       <Navbar />
-
-      {/* Hero Section */}
       <Hero clubInfo={clubInfo} />
-
-      {/* Estadísticas */}
       <EstadisticasSection estadisticas={estadisticas} />
-
-      {/* Jugadores */}
       <JugadoresSection jugadores={jugadores} />
-
-      {/* Trofeos */}
       <TrofeosSection trofeos={trofeos} />
-
-      {/* Historia */}
       <HistoriaSection historia={historia} />
-
-      {/* Estadio y Entrenador */}
       <EstadioEntrenadorSection estadio={estadio} entrenador={entrenador} />
-
-      {/* Cantera */}
       <CanteraSection cantera={clubInfo.cantera} filiales={clubInfo.filiales} />
-
-      {/* Footer */}
       <Footer clubInfo={clubInfo} />
-    </div>
+    </Box>
   );
 }

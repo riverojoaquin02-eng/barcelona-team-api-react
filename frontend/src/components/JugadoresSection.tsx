@@ -1,6 +1,28 @@
 import React, { useState } from 'react';
 import { Jugador } from '../data/barcaData';
-import { Search, Filter, User, Flag, Calendar, Ruler, Weight, Trophy } from 'lucide-react';
+import {
+  Box,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+  TextField,
+  Chip,
+  Dialog,
+  DialogContent,
+  IconButton,
+  InputAdornment,
+  alpha,
+  Paper,
+} from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
+import CloseIcon from '@mui/icons-material/Close';
+import PersonIcon from '@mui/icons-material/Person';
+import FlagIcon from '@mui/icons-material/Flag';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import HeightIcon from '@mui/icons-material/Height';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 interface JugadoresSectionProps {
   jugadores: Jugador[];
@@ -8,22 +30,21 @@ interface JugadoresSectionProps {
 
 const POSICIONES = ['Todos', 'Portero', 'Defensa', 'Centrocampista', 'Delantero', 'Extremo'];
 
-// Función para obtener color según posición
-const getPosicionColor = (posicion: string) => {
-  const colors: Record<string, string> = {
-    'Portero': 'from-yellow-500 to-yellow-600',
-    'Defensa': 'from-blue-500 to-blue-600',
-    'Defensa Central': 'from-blue-500 to-blue-600',
-    'Lateral Izquierdo': 'from-blue-400 to-blue-500',
-    'Centrocampista': 'from-green-500 to-green-600',
-    'Mediocampista': 'from-green-500 to-green-600',
-    'Delantero': 'from-red-500 to-red-600',
-    'Extremo': 'from-purple-500 to-purple-600',
-    'Extremo Derecho': 'from-purple-500 to-purple-600',
-    'Delantero Centro': 'from-red-500 to-red-600',
-    'Mediocampista Ofensivo': 'from-orange-500 to-orange-600',
+const getPosicionGradient = (posicion: string) => {
+  const gradients: Record<string, string> = {
+    'Portero': 'linear-gradient(135deg, #eab308, #ca8a04)',
+    'Defensa': 'linear-gradient(135deg, #3b82f6, #2563eb)',
+    'Defensa Central': 'linear-gradient(135deg, #3b82f6, #2563eb)',
+    'Lateral Izquierdo': 'linear-gradient(135deg, #60a5fa, #3b82f6)',
+    'Centrocampista': 'linear-gradient(135deg, #22c55e, #16a34a)',
+    'Mediocampista': 'linear-gradient(135deg, #22c55e, #16a34a)',
+    'Delantero': 'linear-gradient(135deg, #ef4444, #dc2626)',
+    'Extremo': 'linear-gradient(135deg, #a855f7, #9333ea)',
+    'Extremo Derecho': 'linear-gradient(135deg, #a855f7, #9333ea)',
+    'Delantero Centro': 'linear-gradient(135deg, #ef4444, #dc2626)',
+    'Mediocampista Ofensivo': 'linear-gradient(135deg, #f97316, #ea580c)',
   };
-  return colors[posicion] || 'from-slate-500 to-slate-600';
+  return gradients[posicion] || 'linear-gradient(135deg, #64748b, #475569)';
 };
 
 export const JugadoresSection: React.FC<JugadoresSectionProps> = ({ jugadores }) => {
@@ -31,7 +52,6 @@ export const JugadoresSection: React.FC<JugadoresSectionProps> = ({ jugadores })
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedJugador, setSelectedJugador] = useState<Jugador | null>(null);
 
-  // Filtrar jugadores
   const filteredJugadores = jugadores.filter(jugador => {
     const matchesPosicion = posicionFilter === 'Todos' ||
       jugador.posicion.toLowerCase().includes(posicionFilter.toLowerCase());
@@ -42,248 +62,380 @@ export const JugadoresSection: React.FC<JugadoresSectionProps> = ({ jugadores })
   });
 
   return (
-    <section id="jugadores" className="py-20 bg-slate-950">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <Box
+      component="section"
+      id="jugadores"
+      sx={{ py: { xs: 8, md: 10 }, bgcolor: '#0a0f1a' }}
+    >
+      <Box sx={{ maxWidth: 1280, mx: 'auto', px: { xs: 2, sm: 3, lg: 4 } }}>
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="inline-block px-4 py-2 rounded-full bg-red-600/20 text-red-400 text-sm font-semibold mb-4">
-            Plantilla 2024-25
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Nuestros <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-red-500">Jugadores</span>
-          </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Chip
+            label="Plantilla 2024-25"
+            sx={{ mb: 2, bgcolor: alpha('#dc2626', 0.15), color: '#f87171', fontWeight: 600 }}
+          />
+          <Typography variant="h2" sx={{ mb: 2, fontSize: { xs: '2rem', lg: '2.75rem' } }}>
+            Nuestros{' '}
+            <Box component="span" sx={{ background: 'linear-gradient(135deg, #60a5fa, #ef4444)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Jugadores
+            </Box>
+          </Typography>
+          <Typography sx={{ color: 'text.secondary', maxWidth: 600, mx: 'auto' }}>
             Conoce a las estrellas que defienden los colores del Barcelona
-          </p>
-        </div>
+          </Typography>
+        </Box>
 
-        {/* Filtros */}
-        <div className="flex flex-col md:flex-row gap-4 mb-12">
-          {/* Búsqueda */}
-          <div className="relative flex-1">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-slate-400" />
-            <input
-              type="text"
-              placeholder="Buscar jugador..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-12 pr-4 py-3 bg-slate-800/50 border border-slate-700 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-blue-500 transition-colors"
-            />
-          </div>
-
-          {/* Filtro por posición */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
-            <Filter className="w-5 h-5 text-slate-400 flex-shrink-0" />
+        {/* Filters */}
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 2, mb: 6 }}>
+          <TextField
+            fullWidth
+            placeholder="Buscar jugador..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon sx={{ color: 'text.secondary' }} />
+                </InputAdornment>
+              ),
+            }}
+            sx={{
+              flex: 1,
+              '& .MuiOutlinedInput-root': {
+                borderRadius: 3,
+                bgcolor: alpha('#1e293b', 0.5),
+                '& fieldset': { borderColor: alpha('#334155', 0.5) },
+                '&:hover fieldset': { borderColor: alpha('#3b82f6', 0.5) },
+                '&.Mui-focused fieldset': { borderColor: '#3b82f6' },
+              },
+              '& .MuiInputBase-input': { color: 'white' },
+            }}
+          />
+          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap', alignItems: 'center' }}>
             {POSICIONES.map((pos) => (
-              <button
+              <Chip
                 key={pos}
+                label={pos}
+                clickable
                 onClick={() => setPosicionFilter(pos)}
-                className={`px-4 py-2 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-300 ${posicionFilter === pos
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-slate-800/50 text-slate-400 hover:bg-slate-700 hover:text-white'
-                  }`}
-              >
-                {pos}
-              </button>
+                sx={{
+                  fontWeight: 500,
+                  borderRadius: 3,
+                  bgcolor: posicionFilter === pos ? '#1565c0' : alpha('#1e293b', 0.5),
+                  color: posicionFilter === pos ? 'white' : 'text.secondary',
+                  '&:hover': {
+                    bgcolor: posicionFilter === pos ? '#1976d2' : alpha('#334155', 0.7),
+                    color: 'white',
+                  },
+                }}
+              />
             ))}
-          </div>
-        </div>
+          </Box>
+        </Box>
 
-        {/* Grid de jugadores */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {filteredJugadores.map((jugador, index) => (
-            <div
-              key={jugador.id}
-              onClick={() => setSelectedJugador(jugador)}
-              className="group bg-slate-900/50 backdrop-blur-sm rounded-3xl overflow-hidden border border-slate-800 hover:border-blue-500/50 transition-all duration-500 cursor-pointer transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10"
-              style={{ animationDelay: `${index * 50}ms` }}
-            >
-              {/* Header de la tarjeta con dorsal */}
-              <div className={`relative h-32 bg-gradient-to-br ${getPosicionColor(jugador.posicion)} overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="absolute top-4 left-4">
-                  <span className="text-6xl font-bold text-white/30">{jugador.dorsal}</span>
-                </div>
-                <div className="absolute bottom-4 right-4">
-                  <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium text-white">
-                    {jugador.posicion}
-                  </span>
-                </div>
-                {/* Efecto de brillo */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </div>
-
-              {/* Contenido */}
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
-                  {jugador.nombre}
-                </h3>
-                <p className="text-2xl font-bold text-white mb-4">{jugador.apellido}</p>
-
-                {/* Stats rápidos */}
-                <div className="grid grid-cols-3 gap-3 mb-4">
-                  <div className="text-center p-2 bg-slate-800 rounded-xl">
-                    <p className="text-lg font-bold text-white">{jugador.edad}</p>
-                    <p className="text-xs text-slate-400">Años</p>
-                  </div>
-                  <div className="text-center p-2 bg-slate-800 rounded-xl">
-                    <p className="text-lg font-bold text-white">{jugador.estadisticas.partidos}</p>
-                    <p className="text-xs text-slate-400">Partidos</p>
-                  </div>
-                  <div className="text-center p-2 bg-slate-800 rounded-xl">
-                    <p className="text-lg font-bold text-green-400">{jugador.estadisticas.goles}</p>
-                    <p className="text-xs text-slate-400">Goles</p>
-                  </div>
-                </div>
-
-                {/* Nacionalidad */}
-                <div className="flex items-center gap-2 text-slate-400">
-                  <Flag className="w-4 h-4" />
-                  <span className="text-sm">{jugador.nacionalidad}</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Modal de detalle del jugador */}
-        {selectedJugador && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-            onClick={() => setSelectedJugador(null)}
-          >
-            <div
-              className="bg-slate-900 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-slate-700 shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Header del modal */}
-              <div className={`relative h-48 bg-gradient-to-br ${getPosicionColor(selectedJugador.posicion)} p-8`}>
-                <button
-                  onClick={() => setSelectedJugador(null)}
-                  className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
+        {/* Player Grid */}
+        <Grid container spacing={3}>
+          {filteredJugadores.map((jugador) => (
+            <Grid key={jugador.id} size={{ xs: 12, sm: 6, lg: 3 }}>
+              <Card
+                onClick={() => setSelectedJugador(jugador)}
+                sx={{
+                  cursor: 'pointer',
+                  borderRadius: 6,
+                  overflow: 'hidden',
+                  bgcolor: alpha('#0f172a', 0.5),
+                  border: `1px solid ${alpha('#334155', 0.5)}`,
+                  transition: 'all 0.4s ease',
+                  '&:hover': {
+                    borderColor: alpha('#3b82f6', 0.5),
+                    transform: 'translateY(-8px)',
+                    boxShadow: `0 20px 40px ${alpha('#3b82f6', 0.1)}`,
+                    '& .player-name': { color: '#60a5fa' },
+                    '& .card-header-shine': { opacity: 1 },
+                  },
+                }}
+              >
+                {/* Card Header with dorsal */}
+                <Box
+                  sx={{
+                    position: 'relative',
+                    height: 128,
+                    background: getPosicionGradient(jugador.posicion),
+                    overflow: 'hidden',
+                  }}
                 >
-                  ✕
-                </button>
-                <div className="flex items-end h-full gap-6">
-                  <div className="w-24 h-24 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                    <User className="w-12 h-12 text-white" />
-                  </div>
-                  <div className="mb-2">
-                    <p className="text-6xl font-bold text-white/20 absolute top-4 right-8">{selectedJugador.dorsal}</p>
-                    <h3 className="text-3xl font-bold text-white">{selectedJugador.nombre} {selectedJugador.apellido}</h3>
-                    <p className="text-white/80">{selectedJugador.posicion}</p>
-                  </div>
-                </div>
-              </div>
+                  <Box sx={{ position: 'absolute', inset: 0, bgcolor: alpha('#000', 0.2) }} />
+                  <Typography
+                    sx={{
+                      position: 'absolute',
+                      top: 16,
+                      left: 16,
+                      fontSize: '3.5rem',
+                      fontWeight: 800,
+                      color: alpha('#fff', 0.25),
+                    }}
+                  >
+                    {jugador.dorsal}
+                  </Typography>
+                  <Chip
+                    label={jugador.posicion}
+                    size="small"
+                    sx={{
+                      position: 'absolute',
+                      bottom: 16,
+                      right: 16,
+                      bgcolor: alpha('#fff', 0.2),
+                      color: 'white',
+                      backdropFilter: 'blur(8px)',
+                      fontSize: '0.7rem',
+                    }}
+                  />
+                  <Box
+                    className="card-header-shine"
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(135deg, transparent, rgba(255,255,255,0.1), transparent)',
+                      opacity: 0,
+                      transition: 'opacity 0.5s',
+                    }}
+                  />
+                </Box>
 
-              {/* Contenido del modal */}
-              <div className="p-8 space-y-6">
-                {/* Info personal */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="flex items-center gap-3 p-4 bg-slate-800 rounded-xl">
-                    <Calendar className="w-5 h-5 text-blue-400" />
-                    <div>
-                      <p className="text-xs text-slate-400">Edad</p>
-                      <p className="font-semibold text-white">{selectedJugador.edad} años</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-4 bg-slate-800 rounded-xl">
-                    <Ruler className="w-5 h-5 text-green-400" />
-                    <div>
-                      <p className="text-xs text-slate-400">Altura</p>
-                      <p className="font-semibold text-white">{selectedJugador.altura}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-4 bg-slate-800 rounded-xl">
-                    <Weight className="w-5 h-5 text-yellow-400" />
-                    <div>
-                      <p className="text-xs text-slate-400">Peso</p>
-                      <p className="font-semibold text-white">{selectedJugador.peso}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3 p-4 bg-slate-800 rounded-xl">
-                    <Flag className="w-5 h-5 text-red-400" />
-                    <div>
-                      <p className="text-xs text-slate-400">Nacionalidad</p>
-                      <p className="font-semibold text-white">{selectedJugador.nacionalidad}</p>
-                    </div>
-                  </div>
-                </div>
+                <CardContent sx={{ p: 3 }}>
+                  <Typography
+                    className="player-name"
+                    variant="h6"
+                    fontWeight={700}
+                    sx={{ transition: 'color 0.3s', mb: 0.5 }}
+                  >
+                    {jugador.nombre}
+                  </Typography>
+                  <Typography variant="h5" fontWeight={800} sx={{ mb: 2 }}>
+                    {jugador.apellido}
+                  </Typography>
 
-                {/* Biografía */}
-                <div>
-                  <h4 className="text-lg font-bold text-white mb-3">Biografía</h4>
-                  <p className="text-slate-400 leading-relaxed">{selectedJugador.biografia}</p>
-                </div>
+                  {/* Quick stats */}
+                  <Grid container spacing={1} sx={{ mb: 2 }}>
+                    {[
+                      { val: jugador.edad, label: 'Años' },
+                      { val: jugador.estadisticas.partidos, label: 'Partidos' },
+                      { val: jugador.estadisticas.goles, label: 'Goles', color: '#4ade80' },
+                    ].map((s, i) => (
+                      <Grid key={i} size={4}>
+                        <Paper
+                          elevation={0}
+                          sx={{ textAlign: 'center', p: 1, bgcolor: alpha('#1e293b', 0.8), borderRadius: 2.5 }}
+                        >
+                          <Typography variant="body1" fontWeight={700} sx={{ color: s.color || 'white' }}>
+                            {s.val}
+                          </Typography>
+                          <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                            {s.label}
+                          </Typography>
+                        </Paper>
+                      </Grid>
+                    ))}
+                  </Grid>
 
-                {/* Estadísticas */}
-                <div>
-                  <h4 className="text-lg font-bold text-white mb-3">Estadísticas en el Club</h4>
-                  <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                    <div className="p-4 bg-slate-800 rounded-xl text-center">
-                      <p className="text-2xl font-bold text-blue-400">{selectedJugador.estadisticas.partidos}</p>
-                      <p className="text-xs text-slate-400">Partidos</p>
-                    </div>
-                    <div className="p-4 bg-slate-800 rounded-xl text-center">
-                      <p className="text-2xl font-bold text-green-400">{selectedJugador.estadisticas.goles}</p>
-                      <p className="text-xs text-slate-400">Goles</p>
-                    </div>
-                    <div className="p-4 bg-slate-800 rounded-xl text-center">
-                      <p className="text-2xl font-bold text-yellow-400">{selectedJugador.estadisticas.asistencias}</p>
-                      <p className="text-xs text-slate-400">Asistencias</p>
-                    </div>
-                    <div className="p-4 bg-slate-800 rounded-xl text-center">
-                      <p className="text-2xl font-bold text-orange-400">{selectedJugador.estadisticas.tarjetas_amarillas}</p>
-                      <p className="text-xs text-slate-400">Amarillas</p>
-                    </div>
-                    <div className="p-4 bg-slate-800 rounded-xl text-center">
-                      <p className="text-2xl font-bold text-red-400">{selectedJugador.estadisticas.tarjetas_rojas}</p>
-                      <p className="text-xs text-slate-400">Rojas</p>
-                    </div>
-                  </div>
-                </div>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, color: 'text.secondary' }}>
+                    <FlagIcon sx={{ fontSize: 16 }} />
+                    <Typography variant="body2">{jugador.nacionalidad}</Typography>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
 
-                {/* Palmarés */}
+        {/* Player Detail Dialog */}
+        <Dialog
+          open={!!selectedJugador}
+          onClose={() => setSelectedJugador(null)}
+          maxWidth="md"
+          fullWidth
+          PaperProps={{
+            sx: {
+              borderRadius: 6,
+              maxHeight: '90vh',
+              bgcolor: '#111827',
+              border: `1px solid ${alpha('#334155', 0.5)}`,
+            },
+          }}
+        >
+          {selectedJugador && (
+            <>
+              {/* Dialog Header */}
+              <Box
+                sx={{
+                  position: 'relative',
+                  height: 200,
+                  background: getPosicionGradient(selectedJugador.posicion),
+                  p: 4,
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                }}
+              >
+                <IconButton
+                  onClick={() => setSelectedJugador(null)}
+                  sx={{
+                    position: 'absolute',
+                    top: 16,
+                    right: 16,
+                    bgcolor: alpha('#fff', 0.2),
+                    color: 'white',
+                    '&:hover': { bgcolor: alpha('#fff', 0.3) },
+                  }}
+                >
+                  <CloseIcon />
+                </IconButton>
+
+                <Typography
+                  sx={{
+                    position: 'absolute',
+                    top: 16,
+                    right: 72,
+                    fontSize: '4rem',
+                    fontWeight: 800,
+                    color: alpha('#fff', 0.15),
+                  }}
+                >
+                  {selectedJugador.dorsal}
+                </Typography>
+
+                <Box sx={{ display: 'flex', alignItems: 'flex-end', gap: 3 }}>
+                  <Box
+                    sx={{
+                      width: 96,
+                      height: 96,
+                      borderRadius: 4,
+                      bgcolor: alpha('#fff', 0.2),
+                      backdropFilter: 'blur(10px)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    <PersonIcon sx={{ fontSize: 48, color: 'white' }} />
+                  </Box>
+                  <Box sx={{ mb: 1 }}>
+                    <Typography variant="h4" fontWeight={800} color="white">
+                      {selectedJugador.nombre} {selectedJugador.apellido}
+                    </Typography>
+                    <Typography sx={{ color: alpha('#fff', 0.8) }}>
+                      {selectedJugador.posicion}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+
+              <DialogContent sx={{ p: 4 }}>
+                {/* Personal Info */}
+                <Grid container spacing={2} sx={{ mb: 4 }}>
+                  {[
+                    { icon: <CalendarMonthIcon sx={{ color: '#60a5fa' }} />, label: 'Edad', value: `${selectedJugador.edad} años` },
+                    { icon: <HeightIcon sx={{ color: '#4ade80' }} />, label: 'Altura', value: selectedJugador.altura },
+                    { icon: <FitnessCenterIcon sx={{ color: '#fbbf24' }} />, label: 'Peso', value: selectedJugador.peso },
+                    { icon: <FlagIcon sx={{ color: '#f87171' }} />, label: 'Nacionalidad', value: selectedJugador.nacionalidad },
+                  ].map((item, i) => (
+                    <Grid key={i} size={{ xs: 6, md: 3 }}>
+                      <Paper
+                        elevation={0}
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 1.5,
+                          p: 2,
+                          bgcolor: alpha('#1e293b', 0.8),
+                          borderRadius: 3,
+                        }}
+                      >
+                        {item.icon}
+                        <Box>
+                          <Typography variant="caption" sx={{ color: 'text.secondary' }}>{item.label}</Typography>
+                          <Typography variant="body2" fontWeight={600}>{item.value}</Typography>
+                        </Box>
+                      </Paper>
+                    </Grid>
+                  ))}
+                </Grid>
+
+                {/* Biography */}
+                <Box sx={{ mb: 4 }}>
+                  <Typography variant="h6" fontWeight={700} sx={{ mb: 1.5 }}>Biografía</Typography>
+                  <Typography sx={{ color: 'text.secondary', lineHeight: 1.8 }}>
+                    {selectedJugador.biografia}
+                  </Typography>
+                </Box>
+
+                {/* Club Stats */}
+                <Box sx={{ mb: 4 }}>
+                  <Typography variant="h6" fontWeight={700} sx={{ mb: 1.5 }}>Estadísticas en el Club</Typography>
+                  <Grid container spacing={2}>
+                    {[
+                      { val: selectedJugador.estadisticas.partidos, label: 'Partidos', color: '#60a5fa' },
+                      { val: selectedJugador.estadisticas.goles, label: 'Goles', color: '#4ade80' },
+                      { val: selectedJugador.estadisticas.asistencias, label: 'Asistencias', color: '#fbbf24' },
+                      { val: selectedJugador.estadisticas.tarjetas_amarillas, label: 'Amarillas', color: '#f97316' },
+                      { val: selectedJugador.estadisticas.tarjetas_rojas, label: 'Rojas', color: '#f87171' },
+                    ].map((s, i) => (
+                      <Grid key={i} size={{ xs: 6, md: 2.4 }}>
+                        <Paper
+                          elevation={0}
+                          sx={{ p: 2, textAlign: 'center', bgcolor: alpha('#1e293b', 0.8), borderRadius: 3 }}
+                        >
+                          <Typography variant="h5" fontWeight={700} sx={{ color: s.color }}>{s.val}</Typography>
+                          <Typography variant="caption" sx={{ color: 'text.secondary' }}>{s.label}</Typography>
+                        </Paper>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Box>
+
+                {/* Palmares */}
                 {selectedJugador.palmares.length > 0 && (
-                  <div>
-                    <h4 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-                      <Trophy className="w-5 h-5 text-yellow-400" />
-                      Palmarés en el Club
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
+                  <Box sx={{ mb: 4 }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1.5 }}>
+                      <EmojiEventsIcon sx={{ color: '#fbbf24' }} />
+                      <Typography variant="h6" fontWeight={700}>Palmarés en el Club</Typography>
+                    </Box>
+                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                       {selectedJugador.palmares.map((titulo, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-yellow-500/10 text-yellow-400 rounded-full text-sm">
-                          {titulo}
-                        </span>
+                        <Chip
+                          key={idx}
+                          label={titulo}
+                          sx={{
+                            bgcolor: alpha('#eab308', 0.1),
+                            color: '#fbbf24',
+                            fontWeight: 500,
+                          }}
+                        />
                       ))}
-                    </div>
-                  </div>
+                    </Box>
+                  </Box>
                 )}
 
-                {/* Info adicional */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-slate-800">
-                  <div>
-                    <p className="text-sm text-slate-400">Fecha de nacimiento</p>
-                    <p className="text-white">{selectedJugador.fecha_nacimiento}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-400">Lugar de nacimiento</p>
-                    <p className="text-white">{selectedJugador.lugar_nacimiento}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-400">Debut con el club</p>
-                    <p className="text-white">{selectedJugador.debut}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-slate-400">Valor de mercado</p>
-                    <p className="text-green-400 font-semibold">{selectedJugador.valor_mercado}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    </section>
+                {/* Additional Info */}
+                <Grid container spacing={2} sx={{ pt: 3, borderTop: `1px solid ${alpha('#334155', 0.5)}` }}>
+                  {[
+                    { label: 'Fecha de nacimiento', value: selectedJugador.fecha_nacimiento },
+                    { label: 'Lugar de nacimiento', value: selectedJugador.lugar_nacimiento },
+                    { label: 'Debut con el club', value: selectedJugador.debut },
+                    { label: 'Valor de mercado', value: selectedJugador.valor_mercado, color: '#4ade80' },
+                  ].map((item, i) => (
+                    <Grid key={i} size={{ xs: 12, md: 6 }}>
+                      <Typography variant="body2" sx={{ color: 'text.secondary' }}>{item.label}</Typography>
+                      <Typography fontWeight={item.color ? 600 : 400} sx={{ color: item.color || 'white' }}>
+                        {item.value}
+                      </Typography>
+                    </Grid>
+                  ))}
+                </Grid>
+              </DialogContent>
+            </>
+          )}
+        </Dialog>
+      </Box>
+    </Box>
   );
 };

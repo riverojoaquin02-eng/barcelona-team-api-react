@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
 import { Historia as HistoriaType } from '../data/barcaData';
-import { BookOpen, Award, Users, Star, ChevronRight } from 'lucide-react';
+import {
+  Box,
+  Typography,
+  Grid,
+  Paper,
+  Chip,
+  alpha,
+} from '@mui/material';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import GroupsIcon from '@mui/icons-material/Groups';
+import StarIcon from '@mui/icons-material/Star';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
 interface HistoriaSectionProps {
   historia: HistoriaType;
@@ -10,191 +22,357 @@ export const HistoriaSection: React.FC<HistoriaSectionProps> = ({ historia }) =>
   const [selectedYear, setSelectedYear] = useState<number | null>(null);
 
   return (
-    <section id="historia" className="py-20 bg-slate-950 relative overflow-hidden">
-      {/* Fondo decorativo */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent"></div>
-      </div>
+    <Box
+      component="section"
+      id="historia"
+      sx={{ py: { xs: 8, md: 10 }, bgcolor: '#0a0f1a', position: 'relative', overflow: 'hidden' }}
+    >
+      {/* Background line */}
+      <Box sx={{ position: 'absolute', top: '50%', left: 0, width: '100%', height: '1px', background: `linear-gradient(to right, transparent, ${alpha('#3b82f6', 0.2)}, transparent)` }} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <Box sx={{ maxWidth: 1280, mx: 'auto', px: { xs: 2, sm: 3, lg: 4 }, position: 'relative', zIndex: 1 }}>
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 rounded-full bg-blue-600/20 text-blue-400 text-sm font-semibold mb-4">
-            Desde 1899
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-            Nuestra <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-red-500">Historia</span>
-          </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto">
+        <Box sx={{ textAlign: 'center', mb: 8 }}>
+          <Chip label="Desde 1899" sx={{ mb: 2, bgcolor: alpha('#1565c0', 0.15), color: '#60a5fa', fontWeight: 600 }} />
+          <Typography variant="h2" sx={{ mb: 2, fontSize: { xs: '2rem', lg: '2.75rem' } }}>
+            Nuestra{' '}
+            <Box component="span" sx={{ background: 'linear-gradient(135deg, #60a5fa, #ef4444)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+              Historia
+            </Box>
+          </Typography>
+          <Typography sx={{ color: 'text.secondary', maxWidth: 600, mx: 'auto' }}>
             {historia.leyendas.length} años de pasión, triunfos y un estilo de juego único que ha revolucionado el fútbol mundial.
-          </p>
-        </div>
+          </Typography>
+        </Box>
 
-        {/* Info principal */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {/* Fundación y valores */}
-          <div className="space-y-6">
-            <div className="bg-slate-900/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-800">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center">
-                  <BookOpen className="w-7 h-7 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">Fundación</h3>
-                  <p className="text-blue-400">{historia.fundacion}</p>
-                </div>
-              </div>
+        {/* Main Info */}
+        <Grid container spacing={4} sx={{ mb: 8 }}>
+          {/* Foundation & Values */}
+          <Grid size={{ xs: 12, lg: 6 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+              <Paper
+                elevation={0}
+                sx={{
+                  p: 4,
+                  borderRadius: 6,
+                  bgcolor: alpha('#0f172a', 0.5),
+                  border: `1px solid ${alpha('#334155', 0.5)}`,
+                }}
+              >
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+                  <Box sx={{ width: 56, height: 56, borderRadius: 4, background: 'linear-gradient(135deg, #1565c0, #1976d2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <MenuBookIcon sx={{ fontSize: 28, color: 'white' }} />
+                  </Box>
+                  <Box>
+                    <Typography variant="h5" fontWeight={700}>Fundación</Typography>
+                    <Typography sx={{ color: '#60a5fa' }}>{historia.fundacion}</Typography>
+                  </Box>
+                </Box>
 
-              <p className="text-slate-400 mb-6 leading-relaxed">
-                El {historia.fundacion}, un grupo de jóvenes aficionados al fútbol liderados por
-                <span className="text-white font-semibold"> {historia.fundadores[0]}</span> decidieron formar un club
-                que representara a Barcelona y Cataluña. Nació así el <span className="text-blue-400 font-semibold">Foot-Ball Club Barcelona</span>.
-              </p>
+                <Typography sx={{ color: 'text.secondary', mb: 3, lineHeight: 1.8 }}>
+                  El {historia.fundacion}, un grupo de jóvenes aficionados al fútbol liderados por
+                  <Box component="span" sx={{ color: 'white', fontWeight: 600 }}> {historia.fundadores[0]}</Box> decidieron formar un club
+                  que representara a Barcelona y Cataluña. Nació así el <Box component="span" sx={{ color: '#60a5fa', fontWeight: 600 }}>Foot-Ball Club Barcelona</Box>.
+                </Typography>
 
-              <div className="p-4 bg-blue-500/10 rounded-xl border-l-4 border-blue-500">
-                <p className="text-xl italic text-white">"{historia.lema}"</p>
-                <p className="text-sm text-slate-400 mt-2">- Lema del club</p>
-              </div>
-            </div>
+                <Paper
+                  elevation={0}
+                  sx={{
+                    p: 3,
+                    bgcolor: alpha('#3b82f6', 0.1),
+                    borderRadius: 3,
+                    borderLeft: `4px solid #3b82f6`,
+                  }}
+                >
+                  <Typography variant="h6" sx={{ fontStyle: 'italic', color: 'white' }}>
+                    "{historia.lema}"
+                  </Typography>
+                  <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1 }}>- Lema del club</Typography>
+                </Paper>
+              </Paper>
 
-            {/* Colores */}
-            <div className="bg-slate-900/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-800">
-              <h3 className="text-xl font-bold text-white mb-4">Colores del Club</h3>
-              <div className="flex gap-4">
-                <div className="flex-1">
-                  <div className="h-24 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 mb-2"></div>
-                  <p className="text-center text-slate-400 text-sm">{historia.colores[0]}</p>
-                </div>
-                <div className="flex-1">
-                  <div className="h-24 rounded-xl bg-gradient-to-br from-red-700 to-red-800 mb-2"></div>
-                  <p className="text-center text-slate-400 text-sm">{historia.colores[1]}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+              {/* Colors */}
+              <Paper
+                elevation={0}
+                sx={{
+                  p: 4,
+                  borderRadius: 6,
+                  bgcolor: alpha('#0f172a', 0.5),
+                  border: `1px solid ${alpha('#334155', 0.5)}`,
+                }}
+              >
+                <Typography variant="h5" fontWeight={700} sx={{ mb: 2 }}>Colores del Club</Typography>
+                <Box sx={{ display: 'flex', gap: 2 }}>
+                  <Box sx={{ flex: 1 }}>
+                    <Box sx={{ height: 96, borderRadius: 3, background: 'linear-gradient(135deg, #1565c0, #1976d2)', mb: 1 }} />
+                    <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center' }}>
+                      {historia.colores[0]}
+                    </Typography>
+                  </Box>
+                  <Box sx={{ flex: 1 }}>
+                    <Box sx={{ height: 96, borderRadius: 3, background: 'linear-gradient(135deg, #b71c1c, #c62828)', mb: 1 }} />
+                    <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center' }}>
+                      {historia.colores[1]}
+                    </Typography>
+                  </Box>
+                </Box>
+              </Paper>
+            </Box>
+          </Grid>
 
           {/* Records */}
-          <div className="space-y-6">
-            <div className="bg-slate-900/50 backdrop-blur-sm rounded-3xl p-8 border border-slate-800">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-600 to-yellow-700 flex items-center justify-center">
-                  <Star className="w-7 h-7 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-white">Récords del Club</h3>
-                  <p className="text-yellow-400">Marcos históricos</p>
-                </div>
-              </div>
+          <Grid size={{ xs: 12, lg: 6 }}>
+            <Paper
+              elevation={0}
+              sx={{
+                p: 4,
+                borderRadius: 6,
+                bgcolor: alpha('#0f172a', 0.5),
+                border: `1px solid ${alpha('#334155', 0.5)}`,
+                height: '100%',
+              }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 3 }}>
+                <Box sx={{ width: 56, height: 56, borderRadius: 4, background: 'linear-gradient(135deg, #ca8a04, #eab308)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <StarIcon sx={{ fontSize: 28, color: 'white' }} />
+                </Box>
+                <Box>
+                  <Typography variant="h5" fontWeight={700}>Récords del Club</Typography>
+                  <Typography sx={{ color: '#fbbf24' }}>Marcos históricos</Typography>
+                </Box>
+              </Box>
 
-              <div className="space-y-4">
-                <div className="p-4 bg-slate-800/50 rounded-xl">
-                  <p className="text-sm text-slate-400 mb-1">Máximo goleador</p>
-                  <p className="text-white font-semibold">{historia.records_club.maximo_goleador}</p>
-                </div>
-                <div className="p-4 bg-slate-800/50 rounded-xl">
-                  <p className="text-sm text-slate-400 mb-1">Más partidos disputados</p>
-                  <p className="text-white font-semibold">{historia.records_club.mas_partidos}</p>
-                </div>
-                <div className="p-4 bg-slate-800/50 rounded-xl">
-                  <p className="text-sm text-slate-400 mb-1">Más títulos ganados</p>
-                  <p className="text-white font-semibold">{historia.records_club.mas_titulos}</p>
-                </div>
-                <div className="p-4 bg-slate-800/50 rounded-xl">
-                  <p className="text-sm text-slate-400 mb-1">Máxima goleada</p>
-                  <p className="text-white font-semibold">{historia.records_club.maxima_goleada}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                {[
+                  { label: 'Máximo goleador', value: historia.records_club.maximo_goleador },
+                  { label: 'Más partidos disputados', value: historia.records_club.mas_partidos },
+                  { label: 'Más títulos ganados', value: historia.records_club.mas_titulos },
+                  { label: 'Máxima goleada', value: historia.records_club.maxima_goleada },
+                ].map((record, i) => (
+                  <Paper
+                    key={i}
+                    elevation={0}
+                    sx={{ p: 2, bgcolor: alpha('#1e293b', 0.5), borderRadius: 3 }}
+                  >
+                    <Typography variant="body2" sx={{ color: 'text.secondary', mb: 0.5 }}>{record.label}</Typography>
+                    <Typography fontWeight={600}>{record.value}</Typography>
+                  </Paper>
+                ))}
+              </Box>
+            </Paper>
+          </Grid>
+        </Grid>
 
-        {/* Leyendas */}
-        <div className="mb-16">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-600 to-purple-700 flex items-center justify-center">
-              <Users className="w-6 h-6 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold text-white">Leyendas del Club</h3>
-          </div>
+        {/* Legends */}
+        <Box sx={{ mb: 8 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 4 }}>
+            <Box sx={{ width: 48, height: 48, borderRadius: 3, background: 'linear-gradient(135deg, #7c3aed, #8b5cf6)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <GroupsIcon sx={{ color: 'white' }} />
+            </Box>
+            <Typography variant="h5" fontWeight={700}>Leyendas del Club</Typography>
+          </Box>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <Grid container spacing={2}>
             {historia.leyendas.map((leyenda, index) => (
-              <div
-                key={index}
-                className="group p-4 bg-slate-800/30 rounded-xl border border-slate-700 hover:border-purple-500/50 hover:bg-slate-800/50 transition-all duration-300 text-center"
-              >
-                <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-purple-500/20 to-purple-600/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Award className="w-6 h-6 text-purple-400" />
-                </div>
-                <p className="text-white text-sm font-medium">{leyenda}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Línea de tiempo */}
-        <div>
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">Momentos Históricos</h3>
-
-          <div className="relative">
-            {/* Línea central */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-blue-500 via-red-500 to-yellow-500 rounded-full hidden md:block"></div>
-
-            <div className="space-y-8">
-              {historia.momentos_historicos.map((momento, index) => (
-                <div
-                  key={index}
-                  className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8`}
+              <Grid key={index} size={{ xs: 6, md: 3, lg: 2 }}>
+                <Paper
+                  elevation={0}
+                  sx={{
+                    p: 2,
+                    textAlign: 'center',
+                    borderRadius: 3,
+                    bgcolor: alpha('#1e293b', 0.3),
+                    border: `1px solid ${alpha('#334155', 0.5)}`,
+                    transition: 'all 0.3s',
+                    '&:hover': {
+                      borderColor: alpha('#8b5cf6', 0.5),
+                      bgcolor: alpha('#1e293b', 0.5),
+                      '& .legend-icon': { transform: 'scale(1.1)' },
+                    },
+                  }}
                 >
-                  {/* Contenido */}
-                  <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                    <div
-                      className={`bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 border border-slate-700 hover:border-blue-500/50 transition-all duration-300 cursor-pointer group ${selectedYear === momento.anio ? 'border-blue-500 ring-2 ring-blue-500/20' : ''}`}
-                      onClick={() => setSelectedYear(selectedYear === momento.anio ? null : momento.anio)}
-                    >
-                      <div className={`flex items-center gap-3 mb-2 ${index % 2 === 0 ? 'md:justify-end' : ''}`}>
-                        <span className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-red-500">
-                          {momento.anio}
-                        </span>
-                        <ChevronRight className={`w-5 h-5 text-slate-400 transition-transform ${selectedYear === momento.anio ? 'rotate-90' : ''}`} />
-                      </div>
-                      <h4 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
-                        {momento.titulo}
-                      </h4>
-                      <p className={`text-slate-400 text-sm ${selectedYear === momento.anio ? '' : 'line-clamp-2'}`}>
-                        {momento.descripcion}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Punto en la línea */}
-                  <div className="hidden md:flex w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-red-500 items-center justify-center shadow-lg shadow-blue-500/30 z-10">
-                    <div className="w-3 h-3 rounded-full bg-white"></div>
-                  </div>
-
-                  {/* Espacio vacío para el otro lado */}
-                  <div className="flex-1 hidden md:block"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Presidentes notables */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-bold text-white mb-6 text-center">Presidentes Notables</h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {historia.presidentes_notables.map((presidente, index) => (
-              <span
-                key={index}
-                className="px-6 py-3 bg-slate-800/50 rounded-full text-slate-300 border border-slate-700 hover:border-blue-500/50 hover:text-white transition-all"
-              >
-                {presidente}
-              </span>
+                  <Box
+                    className="legend-icon"
+                    sx={{
+                      width: 48,
+                      height: 48,
+                      mx: 'auto',
+                      mb: 1.5,
+                      borderRadius: '50%',
+                      background: `linear-gradient(135deg, ${alpha('#8b5cf6', 0.15)}, ${alpha('#7c3aed', 0.15)})`,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      transition: 'transform 0.3s',
+                    }}
+                  >
+                    <EmojiEventsIcon sx={{ color: '#a78bfa', fontSize: 24 }} />
+                  </Box>
+                  <Typography variant="body2" fontWeight={500}>{leyenda}</Typography>
+                </Paper>
+              </Grid>
             ))}
-          </div>
-        </div>
-      </div>
-    </section>
+          </Grid>
+        </Box>
+
+        {/* Timeline */}
+        <Box sx={{ mb: 8 }}>
+          <Typography variant="h5" fontWeight={700} sx={{ mb: 4, textAlign: 'center' }}>
+            Momentos Históricos
+          </Typography>
+
+          <Box sx={{ position: 'relative' }}>
+            {/* Central line */}
+            <Box
+              sx={{
+                display: { xs: 'none', md: 'block' },
+                position: 'absolute',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                height: '100%',
+                width: 4,
+                borderRadius: 2,
+                background: 'linear-gradient(to bottom, #3b82f6, #ef4444, #eab308)',
+              }}
+            />
+
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+              {historia.momentos_historicos.map((momento, index) => (
+                <Box
+                  key={index}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    flexDirection: { xs: 'column', md: index % 2 === 0 ? 'row' : 'row-reverse' },
+                    gap: { xs: 2, md: 4 },
+                  }}
+                >
+                  {/* Content */}
+                  <Box sx={{ flex: 1, textAlign: { xs: 'left', md: index % 2 === 0 ? 'right' : 'left' } }}>
+                    <Paper
+                      elevation={0}
+                      onClick={() => setSelectedYear(selectedYear === momento.anio ? null : momento.anio)}
+                      sx={{
+                        p: 3,
+                        borderRadius: 4,
+                        bgcolor: alpha('#1e293b', 0.5),
+                        border: `1px solid ${selectedYear === momento.anio ? '#3b82f6' : alpha('#334155', 0.5)}`,
+                        cursor: 'pointer',
+                        transition: 'all 0.3s',
+                        ...(selectedYear === momento.anio && {
+                          boxShadow: `0 0 15px ${alpha('#3b82f6', 0.2)}`,
+                        }),
+                        '&:hover': {
+                          borderColor: alpha('#3b82f6', 0.5),
+                          '& .momento-title': { color: '#60a5fa' },
+                        },
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 1.5,
+                          mb: 1,
+                          justifyContent: { xs: 'flex-start', md: index % 2 === 0 ? 'flex-end' : 'flex-start' },
+                        }}
+                      >
+                        <Typography
+                          variant="h4"
+                          fontWeight={800}
+                          sx={{
+                            background: 'linear-gradient(135deg, #60a5fa, #ef4444)',
+                            WebkitBackgroundClip: 'text',
+                            WebkitTextFillColor: 'transparent',
+                          }}
+                        >
+                          {momento.anio}
+                        </Typography>
+                        <ChevronRightIcon
+                          sx={{
+                            color: 'text.secondary',
+                            transform: selectedYear === momento.anio ? 'rotate(90deg)' : 'none',
+                            transition: 'transform 0.3s',
+                          }}
+                        />
+                      </Box>
+                      <Typography
+                        className="momento-title"
+                        variant="h6"
+                        fontWeight={700}
+                        sx={{ mb: 1, transition: 'color 0.3s' }}
+                      >
+                        {momento.titulo}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: 'text.secondary',
+                          ...(selectedYear !== momento.anio && {
+                            display: '-webkit-box',
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden',
+                          }),
+                        }}
+                      >
+                        {momento.descripcion}
+                      </Typography>
+                    </Paper>
+                  </Box>
+
+                  {/* Dot */}
+                  <Box
+                    sx={{
+                      display: { xs: 'none', md: 'flex' },
+                      width: 32,
+                      height: 32,
+                      borderRadius: '50%',
+                      background: 'linear-gradient(135deg, #3b82f6, #ef4444)',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: `0 0 15px ${alpha('#3b82f6', 0.3)}`,
+                      zIndex: 1,
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Box sx={{ width: 12, height: 12, borderRadius: '50%', bgcolor: 'white' }} />
+                  </Box>
+
+                  {/* Spacer */}
+                  <Box sx={{ flex: 1, display: { xs: 'none', md: 'block' } }} />
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        </Box>
+
+        {/* Notable Presidents */}
+        <Box sx={{ textAlign: 'center' }}>
+          <Typography variant="h5" fontWeight={700} sx={{ mb: 3 }}>Presidentes Notables</Typography>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 1.5 }}>
+            {historia.presidentes_notables.map((presidente, index) => (
+              <Chip
+                key={index}
+                label={presidente}
+                sx={{
+                  px: 2,
+                  py: 2.5,
+                  fontSize: '0.875rem',
+                  bgcolor: alpha('#1e293b', 0.5),
+                  border: `1px solid ${alpha('#334155', 0.5)}`,
+                  color: alpha('#fff', 0.7),
+                  transition: 'all 0.3s',
+                  '&:hover': {
+                    borderColor: alpha('#3b82f6', 0.5),
+                    color: 'white',
+                  },
+                }}
+              />
+            ))}
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };

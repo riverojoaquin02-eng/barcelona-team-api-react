@@ -156,7 +156,7 @@ export interface ClubInfo {
 }
 
 // REST API calls to FastAPI backend
-const API_URL = 'http://localhost:8001/api';
+const API_URL = 'https://web-barcelona-1.onrender.com/api';
 
 export const getClubInfo = async (): Promise<ClubInfo> => {
   const response = await fetch(`${API_URL}/club-info`);

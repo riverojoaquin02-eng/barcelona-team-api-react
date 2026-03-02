@@ -1,49 +1,92 @@
 import React from 'react';
+import { Box, CircularProgress, Typography, Skeleton, Stack } from '@mui/material';
 
 export const Loading: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[400px] w-full">
-      <div className="relative w-24 h-24">
-        {/* Anillos animados con colores del Barcelona */}
-        <div className="absolute inset-0 border-4 border-blue-600 rounded-full animate-spin border-t-transparent" 
-             style={{ animationDuration: '1s' }}></div>
-        <div className="absolute inset-2 border-4 border-red-700 rounded-full animate-spin border-b-transparent" 
-             style={{ animationDuration: '1.5s', animationDirection: 'reverse' }}></div>
-        <div className="absolute inset-4 border-4 border-yellow-500 rounded-full animate-spin border-l-transparent" 
-             style={{ animationDuration: '2s' }}></div>
-        
-        {/* Logo central */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-2xl font-bold text-white">FCB</span>
-        </div>
-      </div>
-      
-      <p className="mt-6 text-lg text-white/80 font-medium animate-pulse">
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: 400,
+        width: '100%',
+      }}
+    >
+      <Box sx={{ position: 'relative', width: 96, height: 96 }}>
+        <CircularProgress
+          size={96}
+          thickness={3}
+          sx={{ color: 'primary.main', position: 'absolute', top: 0, left: 0 }}
+        />
+        <CircularProgress
+          size={72}
+          thickness={3}
+          sx={{
+            color: 'secondary.main',
+            position: 'absolute',
+            top: 12,
+            left: 12,
+            animationDirection: 'reverse',
+          }}
+        />
+        <CircularProgress
+          size={48}
+          thickness={3}
+          sx={{ color: 'warning.main', position: 'absolute', top: 24, left: 24 }}
+        />
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Typography variant="h6" fontWeight={700} color="white">
+            FCB
+          </Typography>
+        </Box>
+      </Box>
+      <Typography
+        sx={{
+          mt: 4,
+          fontSize: '1.1rem',
+          color: 'rgba(255,255,255,0.7)',
+          fontWeight: 500,
+          animation: 'pulse 2s ease-in-out infinite',
+          '@keyframes pulse': {
+            '0%, 100%': { opacity: 1 },
+            '50%': { opacity: 0.5 },
+          },
+        }}
+      >
         Cargando datos del club...
-      </p>
-    </div>
+      </Typography>
+    </Box>
   );
 };
 
 export const SkeletonCard: React.FC = () => {
   return (
-    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 animate-pulse">
-      <div className="h-48 bg-white/10 rounded-xl mb-4"></div>
-      <div className="h-6 bg-white/10 rounded w-3/4 mb-3"></div>
-      <div className="h-4 bg-white/10 rounded w-1/2"></div>
-    </div>
+    <Box sx={{ bgcolor: 'rgba(255,255,255,0.03)', borderRadius: 3, p: 3 }}>
+      <Skeleton variant="rectangular" height={192} sx={{ borderRadius: 2, mb: 2 }} />
+      <Skeleton variant="text" width="75%" sx={{ mb: 1.5 }} />
+      <Skeleton variant="text" width="50%" />
+    </Box>
   );
 };
 
 export const SkeletonStats: React.FC = () => {
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <Stack direction="row" spacing={2}>
       {[1, 2, 3, 4].map((i) => (
-        <div key={i} className="bg-white/5 backdrop-blur-sm rounded-xl p-6 animate-pulse">
-          <div className="h-8 bg-white/10 rounded w-16 mb-2"></div>
-          <div className="h-4 bg-white/10 rounded w-24"></div>
-        </div>
+        <Box key={i} sx={{ flex: 1, bgcolor: 'rgba(255,255,255,0.03)', borderRadius: 2, p: 3 }}>
+          <Skeleton variant="text" width={64} height={32} sx={{ mb: 1 }} />
+          <Skeleton variant="text" width={96} />
+        </Box>
       ))}
-    </div>
+    </Stack>
   );
 };
